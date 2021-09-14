@@ -9,7 +9,7 @@ We will be creating an application that will analyze videos of Christmas lights 
 
 # Anticipated Technologies
 
-(What technologies are needed to build this project)
+<!---(What technologies are needed to build this project)-->
 We plan to write the program in C#. We plan to use NUnit for testing.
 
 # Method/Approach
