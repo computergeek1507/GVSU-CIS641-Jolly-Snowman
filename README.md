@@ -1,6 +1,6 @@
 # Jolly Snowman
 
-Project description (~1 paragraph)
+<!---Project description (~1 paragraph)-->
 We will be creating an application that will analyze videos of Christmas lights and determine their physical location relative to each other in space.
 
 ## Team Members and Roles
