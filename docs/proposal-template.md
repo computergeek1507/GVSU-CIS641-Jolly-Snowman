@@ -4,7 +4,7 @@ Team members: Scott Hanson, Jessica Malinowski, George Ebeling
 
 # Introduction
 
-(In 2-4 paragraphs, describe your project concept)
+<!---(In 2-4 paragraphs, describe your project concept)-->
 We will be creating an application that will analyze videos of Christmas lights and determine their physical location relative to each other in space.
 
 # Anticipated Technologies
