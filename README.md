@@ -1,4 +1,4 @@
-# Team Name
+# Jolly Snowman
 
 Project description (~1 paragraph)
 
