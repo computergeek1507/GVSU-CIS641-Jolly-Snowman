@@ -7,7 +7,7 @@ We will be creating an application that will analyze videos of Christmas lights 
 
 * [Scott Hanson](https://github.com/computergeek1507/CIS641-HW2-Hanson/) (Role 1, Role 2)
 * [Jessica Malinowski](https://github.com/j-malino/CIS641-HW2--Malinowski-) (Role 3, Role 4)
-* Member 3 (Role 5, Role 6)
+* [George Ebeling](https://github.com/ebelingGWEIV/CIS641-HW2-Ebeling.git)  (Role 5, Role 6)
 
 ## Prerequisites
 
