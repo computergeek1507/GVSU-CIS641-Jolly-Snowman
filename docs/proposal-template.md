@@ -22,4 +22,6 @@ We plan to write the program in C#. We plan to use NUnit for testing.
 
 # Anticipated Problems
 
-(Describe any problems you foresee that you will need to overcome)
+- C# is a new language for Jessica, although she does know java. To address this issue she will look at a C# for java programmers tutorial. 
+Additionally, everyone will complete a basic EmGu project to establish familiarity, to be completed by the 2nd meeting. 
+
