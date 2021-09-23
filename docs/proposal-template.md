@@ -38,11 +38,16 @@ Creating a .xmodel:
 
 # Estimated Timeline
 
-(Figure out what your major milestones for this project will be, including how long you anticipate it *may* take to reach that point)
+<!---(Figure out what your major milestones for this project will be, including how long you anticipate it *may* take to reach that point)--->
+
+* 2 weeks: Identify one light and maask it onto the output image.
+* 1 week: Output a bitmap file image that has every light marked in the image.
+* 2-3 weeks: Identify blobs for each LED.
+* 2 weeks: Output .xmodel file for the X-Lights program.
+* 2 weeks: Control the lights along with all previous output expectations.
 
 # Anticipated Problems
 
 * C# is a new language for Jessica, although she does know java. To address this issue she will look at a C# for java programmers tutorial. 
-
-Additionally, everyone will complete a basic EmGu project to establish familiarity, to be completed by the 2nd meeting. 
+* Additionally, everyone will complete a basic EmGu project to establish familiarity, to be completed by the 2nd meeting. 
 
