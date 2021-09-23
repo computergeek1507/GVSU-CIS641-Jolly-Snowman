@@ -48,6 +48,7 @@ Creating a .xmodel:
 
 # Anticipated Problems
 
-* C# is a new language for Jessica, although she does know java. To address this issue she will look at a C# for java programmers tutorial. 
-* Additionally, everyone will complete a basic EmGu project to establish familiarity, to be completed by the 2nd meeting. 
+* C# is a new language for Jessica, although she does know java. To address this issue she will look at a C# for java programmers tutorial.
+* The group's overall experience with OpenCV is medium-low. Example projects will be utilized for practice and to be used as a template.
+* George and Jessica are unfamiliar with the light controller technology being used. This section of the project will be managed mostly by Scott.
 
