@@ -17,9 +17,9 @@ The processing of video files will be done using the C# OpenCV library, Emgu. Th
 * The programming language will be C#.
 * NUnit for testing will be used for unit testing the application.
 * OpenCV for C# (known as Emgu) is the vision library that will be used.
-* A phone camera will be used for capturing video.
+* A phone camera or webcam will be used for capturing video.
 * DMX controllers will be used to control the lights in the demo
-* If the extended goal of converting the output of this project into a .xmodel file is met, then the X-Lights program will be used for viewing the model's output.
+* If the extended goal of converting the output of this project into a .xmodel file is met, then the xLights program will be used for viewing the model's output.
 
 # Method/Approach
 
@@ -43,7 +43,7 @@ Creating a .xmodel:
 * 2 weeks: Identify one light and mask it onto the output image.
 * 1 week: Output a bitmap file image that has every light marked in the image.
 * 2-3 weeks: Identify blobs for each LED.
-* 2 weeks: Output .xmodel file for the X-Lights program.
+* 2 weeks: Output .xmodel file for the xLights program.
 * 2 weeks: Control the lights along with all previous output expectations.
 
 # Anticipated Problems
