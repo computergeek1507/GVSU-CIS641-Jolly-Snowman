@@ -5,16 +5,36 @@ Team members: Scott Hanson, Jessica Malinowski, George Ebeling
 # Introduction
 
 <!---(In 2-4 paragraphs, describe your project concept)-->
-We will be creating an application that will analyze videos of Christmas lights and determine their physical location relative to each other in space.
+High-end Christmas light shows involve the complex management and control of addressable LEDs. Synchronizing the LEDs to display simple and complex patterns requires modeling each object (tree, reindeer, arches, etc.) in the display. Specifically, these models contain the coordinate information for every LED on the object. Current methods for creating these models involve the time-consuming task of manually creating and adding each LED to the model and then verifying the model's accuracy.
+
+The goal of this project is to develop an application that can automate the task of creating these models. Using a stable video of each LED is turned on and off in sequence, a bitmap image, and eventually, maybe a .xmodel file will be created.
+
+The processing of video files will be done using the C# OpenCV library, Emgu. This application will be developed using Windows 10/11 computers, and the application will be designed to run on Windows 10/11 computers.
 
 # Anticipated Technologies
 
 <!---(What technologies are needed to build this project)-->
-We plan to write the program in C#. We plan to use NUnit for testing.
+* The programming language will be C#.
+* NUnit for testing will be used for unit testing the application.
+* OpenCV for C# (known as Emgu) is the vision libary that will be used.
+* A phone camera will be used for capturing video.
+* DMX controllers will be used to control the lights in the demo
+* If the extended goal of converting the output of this project into a .xmodel file is met, then the X-Lights program will be used for viewing the model's output.
 
 # Method/Approach
 
-(What is your estimated "plan of attack" for developing this project)
+<!---(What is your estimated "plan of attack" for developing this project)--->
+Creating an image:
+
+1. The videos will be pre recorded. In the video, each LED will turn on and off with 0.1-1 second between each LED.
+2. When processing the video, individual frames will be analyzed.
+3. The brightest point of each frame will be masked onto a blank bitmap image with the same resolution as the video.
+4. The resulting bitmap image will be a single image containing the 2D location of every LED in the video.
+
+Creating a .xmodel:
+
+1. To convert the image into a .xmodel file, blobs of every masked LED will be created.
+2. Some information about each created blob is known because of the blob creation process, and the center point coordinates will be assumed to be where the LED exists.
 
 # Estimated Timeline
 
@@ -22,4 +42,7 @@ We plan to write the program in C#. We plan to use NUnit for testing.
 
 # Anticipated Problems
 
-(Describe any problems you foresee that you will need to overcome)
+* C# is a new language for Jessica, although she does know java. To address this issue she will look at a C# for java programmers tutorial. 
+
+Additionally, everyone will complete a basic EmGu project to establish familiarity, to be completed by the 2nd meeting. 
+
