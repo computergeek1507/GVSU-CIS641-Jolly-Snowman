@@ -1,14 +1,26 @@
 # Jolly Snowman
 
 <!---Project description (~1 paragraph)-->
-We will be creating an application that will analyze videos of Christmas lights and determine their physical location relative to each other in space.
+High-end Christmas light shows involve the complex management and control of addressable LEDs. Synchronizing the LEDs to display simple and complex patterns requires modeling each object (tree, reindeer, arches, etc.) in the display. Specifically, these models contain the coordinate information for every LED on the object. Current methods for creating these models involve the time-consuming task of manually creating and adding each LED to the model and then verifying the model's accuracy.
 
-## Team Members and Roles
+The goal of this project is to develop an application that can automate the task of creating these models. Using a stable video of each LED is turned on and off in sequence, a bitmap image, and eventually, maybe a .xmodel file will be created.
 
-* [Scott Hanson](https://github.com/computergeek1507/CIS641-HW2-Hanson/) (Role 1, Role 2)
-* [Jessica Malinowski](https://github.com/j-malino/CIS641-HW2--Malinowski-) (Role 3, Role 4)
-* [George Ebeling](https://github.com/ebelingGWEIV/CIS641-HW2-Ebeling.git) (Role 5, Role 6)
+## About Jolly Snowman
 
-## Prerequisites
+You can read our <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/docs/proposal.md
+">complete project proposal.</a> <br>
+You can read our <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/docs/software_requirements_specification.md
+">software requirements.</a> <br>
 
-## Run Instructions
+### Software Artifacts 
+
+You can view our movie files used for testing <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/tree/master/artifacts
+">here.</a> <br>
+
+## Team Members
+
+* [Scott Hanson](computergeek1507.github.io/) 
+* [Jessica Malinowski](https://j-malino.github.io/) 
+* [George Ebeling](ebelingGWEIV.github.io) 
+
+
