@@ -19,7 +19,7 @@ You can view our movie files used for testing <a href="https://github.com/comput
 
 ## Team Members
 
-* [Scott Hanson](computergeek1507.github.io/) 
+* [Scott Hanson](https://computergeek1507.github.io/) 
 * [Jessica Malinowski](https://j-malino.github.io/) 
 * [George Ebeling](https://ebelinggweiv.github.io/CIS641-HW2-Ebeling/) 
 
