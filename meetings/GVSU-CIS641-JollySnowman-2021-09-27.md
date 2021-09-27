@@ -17,6 +17,6 @@ Discussion points:
 
 Goals for next week (include responsibilities)
 
-* 
-* 
+* Create a small sample project with Mask RCNN to assess applicability for project -Jessica 
+* Create a small video file upload project with OpenCV -Scott
 * 
