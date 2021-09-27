@@ -13,10 +13,10 @@ Discussion points:
 * Discussion of relevant libraries, Mask RCNN
 * Creation of File Sharing System 
 * Sharing of OpenCV/Emgu projects from last week
-* Creation of software requirements
+* Formation of software requirements
 
 Goals for next week (include responsibilities)
 
 * Create a small sample project with Mask RCNN to assess applicability for project -Jessica 
 * Create a small video file upload project with OpenCV -Scott
-* 
+* Will finish filling out the Software Requirements Page - George
