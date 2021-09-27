@@ -14,7 +14,8 @@ This document serves as a set of software requirements which make the program bo
 2. Software Feature: Video Processing
     1. The user shall be able to adjust processing parameters.
     2. The video processing shall pause if two or more light objects are detected simulataneously.
-    3. The video processing shall pause if no light objects are detected 
+    3. The video processing shall pause if no light objects are detected
+    4. The video processor shall expect one new light to be lit for every 500 miliseconds of video.
 
 ## Non-Functional Requirements
 
