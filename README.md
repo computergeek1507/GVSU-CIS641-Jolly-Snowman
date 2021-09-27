@@ -11,9 +11,6 @@ You can read our <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-
 ">complete project proposal.</a> <br>
 You can read our <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/docs/software_requirements_specification.md
 ">software requirements.</a> <br>
-
-### Software Artifacts 
-
 You can view our movie files used for testing <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/tree/master/artifacts
 ">here.</a> <br>
 
