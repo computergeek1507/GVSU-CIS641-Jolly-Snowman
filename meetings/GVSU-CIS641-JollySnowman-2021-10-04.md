@@ -1,6 +1,6 @@
 # CIS641 Meeting October 4, 2021
 
-## Meeting minutes template
+## Meeting minutes
 
 Team name: Jolly Snowman
 
