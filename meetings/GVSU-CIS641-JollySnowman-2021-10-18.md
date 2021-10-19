@@ -14,6 +14,6 @@ Discussion points:
 - Tasks were assigned from the Gantt chart that George started. Other tasks were added and assigned as necessary. 
 
 Goals for next week:
-- 
--
--
+- Finish the task of outputting a properly formatted .xModal file (SH, GE, DUE 10/25)
+- Start unit testing process of image analyzer (JM, DUE 1/2)
+
