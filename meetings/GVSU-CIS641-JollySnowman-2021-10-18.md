@@ -15,5 +15,5 @@ Discussion points:
 
 Goals for next week:
 - Finish the task of outputting a properly formatted .xModal file (SH, GE, DUE 10/25)
-- Start unit testing process of image analyzer (JM, DUE 1/2)
+- Start unit testing process of image analyzer (JM, DUE 11/2)
 
