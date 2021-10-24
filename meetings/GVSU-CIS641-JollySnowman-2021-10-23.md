@@ -12,8 +12,8 @@ Discussion points:
 
 - We started this meeting with a code review and progress check in. The demo was successfully migrated onto the main Jolly-Snowman branch, but there were small issues with the conflicting README.md documents. The committ history of the demo from conception until now was not able to be transfere. SH and GE collaboratively worked on the demo. 
 - Completed tasks since last meeting were reviewed (Midterm presentation & Output a properly formatted .xModel file.  
-- On-going tasks include unit testing process of image analyzer (JM, GE, DUE 11/2) and Unit testing of the Model exporter (JM, DUE 11/15). 
+- On-going tasks include unit testing process of image analyzer (JM, GE, DUE 11/2) and Unit testing of the Model exporter (JM, DUE 11/15). A collaborative coding session is planned for 10/26 to talk about testing with images. 
 
 Goals for next week:
-- Schedule a collaborative coding session, working around Fall Break for GE and JM to work on testing. 
+- Hold a collaborative coding session. 
 - Future direction and potential feature development as time allows. 
