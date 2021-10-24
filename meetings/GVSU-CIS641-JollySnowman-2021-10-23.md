@@ -16,5 +16,5 @@ Discussion points:
 - SH shared a library that could be used to send the commands to the lights. 
 
 Goals for next week:
-- Hold a collaborative coding session. 
+- Hold a collaborative coding session (all members working together). 
 - Future direction and potential feature development as time allows. 
