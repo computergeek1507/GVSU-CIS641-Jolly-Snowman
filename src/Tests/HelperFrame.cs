@@ -8,11 +8,25 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Emgu.CV;
+using Emgu.Util;
+using Emgu.CV.Util;
+using Emgu.CV.Structure;
 
-namespace UnitTesting
+namespace Emgu_Test.Tests
 {
     public class FrameHelper
     {
+        public static Mat GetTestMat()
+        {
+            Bitmap testBitmap = GetTestBitmap();
+            Image<Rgb, byte> imageCV = testBitmap.ToImage<Rgb, byte>();
+            Mat testMat = imageCV.Mat;
+            testMat.Save(@"C:\Users\GWEbe\Downloads\testImage.jpg");
+
+            return testMat;
+        }
+
 
         public static Bitmap GetTestBitmap()
         {
