@@ -112,7 +112,7 @@ namespace Emgu_Test
 			}
 		}
 
-		void ProcessFrame(Mat frame_in, bool view_only = false)
+		public void ProcessFrame(Mat frame_in, bool view_only = false)
 		{
 			//https://learnopencv.com/blob-detection-using-opencv-python-c/
 
@@ -206,7 +206,7 @@ namespace Emgu_Test
 			//CvInvoke.Imshow("Blob Detector " + keyPoints.Size, grey);
 		}
 
-		private void DrawFoundNodes(Mat mat)
+		public void DrawFoundNodes(Mat mat)
 		{
 			MCvScalar color = new MCvScalar(255, 0, 0);
 			foreach (var light in _lightManager.GetLights())
