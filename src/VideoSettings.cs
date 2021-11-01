@@ -32,7 +32,7 @@ namespace Emgu_Test
 		private float _min_circularity = 0.50F;
 		private float _min_convexity = 0.50F;
 		private float _min_inertia_ratio = 0.40F;
-		private int _light_count = 50;
+		//private int _light_count = 50;
 		private int _min_light_size = 30;
 		private int _grid_scale = 10;
 
@@ -180,7 +180,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Light Settings"), DescriptionAttribute("Number of Christmas Lights")]
+		/*[CategoryAttribute("Light Settings"), DescriptionAttribute("Number of Christmas Lights")]
 		public int LightCount
 		{
 			get
@@ -191,7 +191,7 @@ namespace Emgu_Test
 			{
 				_light_count = value;
 			}
-		}
+		}*/
 
 		[CategoryAttribute("Light Settings"), DescriptionAttribute("Minimum Light Size")]
 		public int MinLightSize
