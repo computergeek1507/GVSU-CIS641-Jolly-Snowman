@@ -21,8 +21,10 @@ namespace Emgu_Test
 		readonly string _appDataFolder = string.Format("{0}{1}{2}", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Path.DirectorySeparatorChar, "Emgu_Test");
 
 		VideoSettings _videoSettings;
+		E131Settings _e131Settings;
 		readonly VideoProcessing _videoProcessing;
 		readonly LightManager _lightManager;
+		readonly E131OutputManager _e131OutputManager;
 
 		public MainForm()
 		{
@@ -36,9 +38,12 @@ namespace Emgu_Test
 			}
 
 			_videoSettings = new VideoSettings();
+			_e131Settings = new E131Settings();
 			LoadSettings();
 			_lightManager = new LightManager();
-			_videoProcessing = new VideoProcessing(_lightManager);
+			_videoProcessing = new VideoProcessing(_lightManager, _videoSettings);
+
+			_e131OutputManager = new E131OutputManager(_e131Settings, _videoProcessing);
 
 			dataGridViewLights.DataSource = _lightManager.GetBinding();
 
@@ -48,6 +53,7 @@ namespace Emgu_Test
 			_videoProcessing.ImageSent += Video_ShowFrame;
 			_videoProcessing.CurrentFrame += Video_SetFrameValue;
 			_lightManager.MessageSent += Logger_EventLogged;
+			_e131OutputManager.MessageSent += Logger_EventLogged;
 		}
 
 		private void Logger_EventLogged(object sender, string e)
@@ -80,8 +86,7 @@ namespace Emgu_Test
 		{
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
-				_videoSettings.FileName = openFileDialog1.FileName;
-				_videoProcessing.LoadVideo(_videoSettings);
+				_videoProcessing.LoadVideo(openFileDialog1.FileName);
 				Application.DoEvents();
 			}
 		}
@@ -119,6 +124,7 @@ namespace Emgu_Test
 		void LoadSettings()
 		{
 			var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
+			var e131settingFile = _appDataFolder + Path.DirectorySeparatorChar + "E131Settings.xml";
 
 			try
 			{
@@ -128,6 +134,14 @@ namespace Emgu_Test
 					FileStream reader = new FileStream(settingFile, FileMode.Open);
 					_videoSettings = (VideoSettings)serializer.Deserialize(reader);
 					reader.Close();
+				}
+
+				if (File.Exists(e131settingFile))//see if file exists
+				{
+					//XmlSerializer serializer = new XmlSerializer(typeof(E131Settings));
+					//FileStream reader = new FileStream(e131settingFile, FileMode.Open);
+					//_e131Settings = (E131Settings)serializer.Deserialize(reader);
+					//reader.Close();
 				}
 			}
 			catch (Exception ex)
@@ -139,12 +153,18 @@ namespace Emgu_Test
 		void SaveSettings()
 		{
 			var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
+			var e131settingFile = _appDataFolder + Path.DirectorySeparatorChar + "E131Settings.xml";
 			try
 			{
 				XmlSerializer serializer = new XmlSerializer(typeof(VideoSettings));
 				TextWriter writer = new StreamWriter(settingFile);
 				serializer.Serialize(writer, _videoSettings);
 				writer.Close();
+
+				XmlSerializer e131serializer = new XmlSerializer(typeof(E131Settings));
+				TextWriter e131writer = new StreamWriter(e131settingFile);
+				e131serializer.Serialize(e131writer, _e131Settings);
+				e131writer.Close();
 			}
 			catch (Exception ex)
 			{
@@ -156,13 +176,14 @@ namespace Emgu_Test
 		{
 			if (File.Exists(_videoSettings.FileName))//see if file exists
 			{
-				_videoProcessing.LoadVideo(_videoSettings);
+				_videoProcessing.LoadVideo(_videoSettings.FileName);
 			}
 		}
 
 		private void buttonStop_Click(object sender, EventArgs e)
 		{
 			_videoProcessing.SetStop();
+			_e131OutputManager.StopOutput();
 		}
 
 		private void exportAsXModelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -172,5 +193,10 @@ namespace Emgu_Test
 				_lightManager.ExportModel(xModelSaveFileDialog.FileName, _videoSettings.GridScale);
 			}
 		}
-	}
+
+        private void startE131ModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			_e131OutputManager.StartOutput();
+		}
+    }
 }
