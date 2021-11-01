@@ -24,8 +24,8 @@ namespace Emgu_Test
 		public event EventHandler<Bitmap> ImageSent;
 		public event EventHandler<string> MessageSent;
 
-		int NODEON = 500;
-		int NODEOFF = 200;
+		//int NODEON = 500;
+		//int NODEOFF = 200;
 
 		VideoSettings _settings;
 		VideoCapture _videoCapture;
@@ -36,8 +36,9 @@ namespace Emgu_Test
 		double _fps = 0;
 		bool _stop = false;
 
-		public VideoProcessing(LightManager lightManager) {
+		public VideoProcessing(LightManager lightManager, VideoSettings settings) {
 			_lightManager = lightManager;
+			_settings = settings;
 
 		}
 		void OnMessageSent(string message) => MessageSent.Invoke(this, message);
@@ -60,9 +61,10 @@ namespace Emgu_Test
 			_stop = stop;
 		}
 
-		public void LoadVideo(VideoSettings settings)
+		public void LoadVideo(string fileName)
 		{
-			_settings = settings;
+			//_settings = settings;
+			_settings.FileName = fileName;
 			_videoCapture = new VideoCapture(_settings.FileName);
 
 			_fps = _videoCapture.Get(Emgu.CV.CvEnum.CapProp.Fps);
@@ -95,9 +97,7 @@ namespace Emgu_Test
 		public void ProcessVideo()
 		{
 			_stop = false;
-			_lightManager.Clear();
-			_currentFrameNo = 0;
-			_videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, _currentFrameNo);
+			ResetVideoFileData();
 			while (_currentFrameNo < _totalFrames && !_stop)
 			{
 				var frame = _videoCapture.QueryFrame();
@@ -112,10 +112,34 @@ namespace Emgu_Test
 			}
 		}
 
-		void ProcessFrame(Mat frame_in, bool view_only = false)
+		public void ResetVideoFileData()
+		{
+			_lightManager.Clear();
+			_currentFrameNo = 0;
+			_videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, _currentFrameNo);
+		}
+
+		public void SetupCamera(int cameraIdx)
+		{
+			_lightManager.Clear();
+			_videoCapture = new VideoCapture(cameraIdx);
+		}
+
+		public bool ProcessCameraFrame()
+		{
+			var frame = _videoCapture.QueryFrame();
+			if (frame == null)
+			{
+				return false;
+			}
+			return ProcessFrame(frame);
+		}
+
+		public bool ProcessFrame(Mat frame_in, bool view_only = false)
 		{
 			//https://learnopencv.com/blob-detection-using-opencv-python-c/
 
+			bool foundNode = false;
 			//blur before grey
 			if (_settings.BlurSize != 0)
 			{
@@ -193,6 +217,7 @@ namespace Emgu_Test
 						}
 						if (_lightManager.AddLight(keyPoints[0].Point, keyPoints[0].Size))
 						{
+							foundNode = true;
 							break;
 						}
 					}
@@ -204,6 +229,7 @@ namespace Emgu_Test
 			OnImageSent(im_with_keypoints.ToBitmap());
 
 			//CvInvoke.Imshow("Blob Detector " + keyPoints.Size, grey);
+			return foundNode;
 		}
 
 		private void DrawFoundNodes(Mat mat)
