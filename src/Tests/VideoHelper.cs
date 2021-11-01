@@ -10,14 +10,14 @@ namespace Emgu_Test.Tests
 {
     class VideoHelper
     {
-        public static LightManager ProcessVideo(String filename)
+        public static LightManager ProcessVideo(string filename)
         {
             var testMan = new LightManager();
 
             VideoSettings vidSet = LoadSettings();
             vidSet.FileName = filename;
-            VideoProcessing vidProc = new VideoProcessing(testMan);
-            vidProc.LoadVideo(vidSet);
+            VideoProcessing vidProc = new VideoProcessing(testMan,vidSet);
+            vidProc.LoadVideo(filename);
 
             vidProc.ProcessVideo();
 

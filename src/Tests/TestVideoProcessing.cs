@@ -39,8 +39,8 @@ namespace Emgu_Test.Tests
             LightManager testMan = new LightManager();
             VideoSettings testSet = new VideoSettings();
 
-            VideoProcessing vid = new VideoProcessing(testMan);
-            vid.LoadVideo(testSet);
+            VideoProcessing vid = new VideoProcessing(testMan, testSet);
+            //vid.LoadVideo(testSet);
 
             vid.ProcessFrame(testMat);
             Assert.Greater(testMan.GetLights().Count(), 0, "Lights should have been detected");
