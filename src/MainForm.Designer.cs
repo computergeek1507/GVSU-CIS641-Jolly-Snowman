@@ -38,7 +38,6 @@ namespace Emgu_Test
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startE131ModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exportAsXModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -56,6 +55,7 @@ namespace Emgu_Test
             this.tabPageSettings = new System.Windows.Forms.TabPage();
             this.tabPageLights = new System.Windows.Forms.TabPage();
             this.xModelSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.startE131ModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLights)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.videoPictureBox)).BeginInit();
@@ -163,38 +163,31 @@ namespace Emgu_Test
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Load Video";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // startE131ModeToolStripMenuItem
-            // 
-            this.startE131ModeToolStripMenuItem.Name = "startE131ModeToolStripMenuItem";
-            this.startE131ModeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.startE131ModeToolStripMenuItem.Text = "Start E131 Mode";
-            this.startE131ModeToolStripMenuItem.Click += new System.EventHandler(this.startE131ModeToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exportAsXModelToolStripMenuItem
             // 
             this.exportAsXModelToolStripMenuItem.Name = "exportAsXModelToolStripMenuItem";
-            this.exportAsXModelToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.exportAsXModelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportAsXModelToolStripMenuItem.Text = "Export As xModel";
             this.exportAsXModelToolStripMenuItem.Click += new System.EventHandler(this.exportAsXModelToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -324,7 +317,7 @@ namespace Emgu_Test
             this.tabPageSettings.Controls.Add(this.videoPropertyGrid);
             this.tabPageSettings.Location = new System.Drawing.Point(4, 24);
             this.tabPageSettings.Name = "tabPageSettings";
-            this.tabPageSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSettings.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageSettings.Size = new System.Drawing.Size(179, 568);
             this.tabPageSettings.TabIndex = 0;
             this.tabPageSettings.Text = "Settings";
@@ -335,7 +328,7 @@ namespace Emgu_Test
             this.tabPageLights.Controls.Add(this.dataGridViewLights);
             this.tabPageLights.Location = new System.Drawing.Point(4, 24);
             this.tabPageLights.Name = "tabPageLights";
-            this.tabPageLights.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLights.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageLights.Size = new System.Drawing.Size(179, 568);
             this.tabPageLights.TabIndex = 1;
             this.tabPageLights.Text = "Lights";
@@ -346,6 +339,13 @@ namespace Emgu_Test
             this.xModelSaveFileDialog.DefaultExt = "xmodel";
             this.xModelSaveFileDialog.Filter = "xmodel files (*.xmodel)|*.xmodel|All files (*.*)|*.*";
             this.xModelSaveFileDialog.RestoreDirectory = true;
+            // 
+            // startE131ModeToolStripMenuItem
+            // 
+            this.startE131ModeToolStripMenuItem.Name = "startE131ModeToolStripMenuItem";
+            this.startE131ModeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.startE131ModeToolStripMenuItem.Text = "Start E131 Mode";
+            this.startE131ModeToolStripMenuItem.Click += new System.EventHandler(this.startE131ModeToolStripMenuItem_Click);
             // 
             // MainForm
             // 
