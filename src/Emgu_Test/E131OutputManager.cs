@@ -151,7 +151,7 @@ namespace Emgu_Test
             //OnCurrentNodeSent(node);
             Application.DoEvents();
             Thread.Sleep(1000);
-            _processer.ProcessCameraFrame();
+            _processer.ProcessCameraFrame(true);
             
         }
     }

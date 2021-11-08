@@ -133,14 +133,14 @@ namespace Emgu_Test
 			}
 		}
 
-		public bool ProcessCameraFrame()
+		public bool ProcessCameraFrame(bool view_only = false)
 		{
 			var frame = _videoCapture.QueryFrame();
 			if (frame == null)
 			{
 				return false;
 			}
-			return ProcessFrame(frame);
+			return ProcessFrame(frame, view_only);
 		}
 
 		public bool ProcessFrame(Mat frame_in, bool view_only = false)
