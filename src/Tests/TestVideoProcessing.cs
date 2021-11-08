@@ -34,7 +34,7 @@ namespace Emgu_Test.Tests
         }
 
         [Test]
-        public void TestDrawnFoundNodes()
+        public void TestFrame_One()
         {
             LightManager testMan = new LightManager();
             VideoSettings testSet = new VideoSettings();
@@ -43,32 +43,45 @@ namespace Emgu_Test.Tests
             //vid.LoadVideo(testSet);
 
             vid.ProcessFrame(testMat);
-            Assert.Greater(testMan.GetLights().Count(), 0, "Lights should have been detected");
+            Assert.AreEqual(1, testMan.GetLights().Count(), "Lights should have been detected");
         }
 
         [Test]
-        public void TestVideo_BeginningAndOne()
+        public void TestVideo_ManyLEDsThenOne()
         {
             LightManager testMan = VideoHelper.ProcessVideo( @"../../artifacts/TestVideos/Test_BeginningAndOne.mp4");
             
-            Assert.Greater(testMan.GetLights().Count(), 0, "Lights should have been detected");
+            Assert.AreEqual(1, testMan.GetLights().Count(), "Lights should have been detected");
         }
 
         [Test]
-        public void TestVideo_BeginningAndNone()
+        public void TestVideo_ManyLEDs()
         {
             LightManager testMan = VideoHelper.ProcessVideo(@"../../artifacts/TestVideos/Test_BeginningAndNone.mp4");
 
-            Assert.AreEqual(testMan.GetLights().Count(), 0, "No lights should have been detected");
+            Assert.AreEqual(0, testMan.GetLights().Count(), "No lights should have been detected");
         }
 
         [Test]
-        public void TestVideo_NoBeginningAndOne() // #TODO What is the correct outcome for this test?
+        public void TestVideo_OneLED() // #TODO What is the correct outcome for this test?
         {
             LightManager testMan = VideoHelper.ProcessVideo(@"../../artifacts/TestVideos/Test_NoBeginningAndOne.mp4");
 
-            Assert.AreEqual(testMan.GetLights().Count(), 0, "One light should have been detected, maybe?");
+            Assert.AreEqual(0, testMan.GetLights().Count(), "One light should have been detected, maybe?");
         }
-        
+
+        [Test]
+        public void TestLoadVideo()
+        {
+            LightManager lightMan = new LightManager();
+
+            VideoSettings vidSet = VideoHelper.LoadSettings();
+            vidSet.FileName = @"../../artifacts/TestVideos/Test_NoBeginningAndOne.mp4";
+            VideoProcessing vidProc = new VideoProcessing(lightMan, vidSet);
+            vidProc.LoadVideo(vidSet.FileName);
+
+            
+        }
+
     }
 }
