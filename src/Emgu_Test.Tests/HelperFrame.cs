@@ -22,8 +22,8 @@ namespace Emgu_Test.Tests
             Bitmap testBitmap = GetTestBitmap();
             Image<Rgb, byte> imageCV = testBitmap.ToImage<Rgb, byte>();
             Mat testMat = imageCV.Mat;
-            testMat.Save(@"C:\Users\GWEbe\Downloads\testImage.jpg");
-
+            //testMat.Save(@"C:\Users\GWEbe\Downloads\testImage.jpg");
+            testMat.Save(@"testImage.jpg");
             return testMat;
         }
 
@@ -33,7 +33,7 @@ namespace Emgu_Test.Tests
             var testSrc = CreateBitmapSource(System.Windows.Media.Color.FromRgb(0, 0, 0));
             Bitmap testImg = GetFromSource(testSrc);
 
-            using (Graphics myGraph = Graphics.FromImage(testImg)) { 
+            using (Graphics myGraph = Graphics.FromImage(testImg)) {
 
                 GraphicsExtensions.DrawCircle(myGraph, testImg.Width / 2, testImg.Height / 2, 20);
                 GraphicsExtensions.FillCircle(myGraph, testImg.Width / 2, testImg.Height / 2, 20);
@@ -43,7 +43,7 @@ namespace Emgu_Test.Tests
 
             //testImg.Save(@"C:\Users\%User%\Downloads\testImage.bmp", ImageFormat.Bmp);
             return testImg;
-            
+
         }
 
         private static BitmapSource CreateBitmapSource(System.Windows.Media.Color color)

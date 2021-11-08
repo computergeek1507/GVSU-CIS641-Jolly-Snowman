@@ -14,20 +14,23 @@ namespace Emgu_Test
 {
     public class E131OutputManager
     {
+        public event EventHandler<int> CurrentNodeSent;
         public event EventHandler<string> MessageSent;
 
-        E131Settings _settings;
+        VideoSettings _settings;
         VideoProcessing _processer;
 
         bool _stop = false;
 
-        public E131OutputManager(E131Settings settings, VideoProcessing processer)
+        public E131OutputManager(VideoSettings settings, VideoProcessing processer)
         {
             _settings = settings;
             _processer = processer;
         }
 
         void OnMessageSent(string message) => MessageSent.Invoke(this, message);
+
+        void OnCurrentNodeSent(int node) => CurrentNodeSent.Invoke(this, node);
 
         public void StartOutput() 
         {
@@ -44,6 +47,7 @@ namespace Emgu_Test
                     break;
                 }
                 bool worked = SendPacket(node);
+                OnCurrentNodeSent(node);
                 Application.DoEvents();
                 Thread.Sleep(1000);
                 _processer.ProcessCameraFrame();
@@ -64,6 +68,10 @@ namespace Emgu_Test
                 //UInt16 universe = 1;
                 string sourceName = "My lovely source";
                 SacnPacketFactory factory = new SacnPacketFactory(cid, sourceName);
+
+                ushort unv = _settings.Universe;
+                unv += (ushort)(nodeIndex / 170);
+                nodeIndex = (nodeIndex % 170);
                 byte[] values = GetNodeData(nodeIndex);
 
                 var packet = factory.CreateDataPacket(_settings.Universe, values);
@@ -89,7 +97,7 @@ namespace Emgu_Test
             //int index3 = (index * 3) + 2;
             for (int i = 0; i < 3; ++i)
             {
-                values[(index * 3)+i] = _settings.Brightness;
+                values[(index * 3) + i] = _settings.Brightness;
             }
 
             return values;
@@ -128,6 +136,23 @@ namespace Emgu_Test
                 OnMessageSent(ex.Message);
                 return false;
             }
+        }
+
+        internal void OutputLight(int light)
+        {
+            //_stop = false;
+            if (!PingIP())
+            {
+                return;
+            }
+            _processer.SetupCamera(0);
+
+            bool worked = SendPacket(light);
+            //OnCurrentNodeSent(node);
+            Application.DoEvents();
+            Thread.Sleep(1000);
+            _processer.ProcessCameraFrame(true);
+            
         }
     }
 }

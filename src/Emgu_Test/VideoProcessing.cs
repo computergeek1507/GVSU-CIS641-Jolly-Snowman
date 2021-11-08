@@ -35,6 +35,7 @@ namespace Emgu_Test
 		double _totalFrames = 0;
 		double _fps = 0;
 		bool _stop = false;
+		int _camera = -1;
 
 		public VideoProcessing(LightManager lightManager, VideoSettings settings) {
 			_lightManager = lightManager;
@@ -76,7 +77,10 @@ namespace Emgu_Test
 
 		public void ProcessSingleFrame(int frameIndex)
 		{
-			_videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, frameIndex);
+			if (frameIndex != -1)
+			{
+				_videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, frameIndex);
+			}
 
 			var frame = _videoCapture.QueryFrame();
 			ProcessFrame(frame, true);
@@ -122,17 +126,21 @@ namespace Emgu_Test
 		public void SetupCamera(int cameraIdx)
 		{
 			_lightManager.Clear();
-			_videoCapture = new VideoCapture(cameraIdx);
+			if (cameraIdx != _camera)
+			{
+				_videoCapture = new VideoCapture(cameraIdx);
+				_camera = cameraIdx;
+			}
 		}
 
-		public bool ProcessCameraFrame()
+		public bool ProcessCameraFrame(bool view_only = false)
 		{
 			var frame = _videoCapture.QueryFrame();
 			if (frame == null)
 			{
 				return false;
 			}
-			return ProcessFrame(frame);
+			return ProcessFrame(frame, view_only);
 		}
 
 		public bool ProcessFrame(Mat frame_in, bool view_only = false)

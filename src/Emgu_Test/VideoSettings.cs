@@ -10,6 +10,11 @@ using System.Xml.Serialization;
 
 namespace Emgu_Test
 {
+	public enum Mode {
+		VideoMode = 0,
+		E131Mode = 1
+	}
+
 	///<summary>
 	// Processing Settings class
 	///</summary>
@@ -35,6 +40,13 @@ namespace Emgu_Test
 		//private int _light_count = 50;
 		private int _min_light_size = 30;
 		private int _grid_scale = 10;
+
+		private string m_ip_address = "192.168.1.102";
+		private int m_light_count = 50;
+		private ushort m_universe = 1;
+		private int m_start_channel = 1;
+		private byte m_brightness = 127;
+		Mode m_processMode = Mode.VideoMode;
 
 		[CategoryAttribute("File Settings"), DescriptionAttribute("File Path of Video")]
 		public string FileName
@@ -76,7 +88,7 @@ namespace Emgu_Test
 		}
 
 
-		[ CategoryAttribute("Video Settings"), DescriptionAttribute("Grey Value Threshold")]
+		[ CategoryAttribute("Video Settings"), DescriptionAttribute("Grey Value Threshold(0-255)")]
 		public int GreyThreshold
 		{
 			get
@@ -128,7 +140,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Color")]
+		[CategoryAttribute("Video Settings"), DescriptionAttribute("Color(0-255)")]
 		public byte Color
 		{
 			get
@@ -205,7 +217,7 @@ namespace Emgu_Test
 				_min_light_size = value;
 			}
 		}
-
+		
 		[CategoryAttribute("Export Settings"), DescriptionAttribute("Grid Scale")]
 		public int GridScale
 		{
@@ -216,6 +228,84 @@ namespace Emgu_Test
 			set
 			{
 				_grid_scale = value;
+			}
+		}
+		
+		[CategoryAttribute("E131 Settings"), DescriptionAttribute("E131 IP Address of Controller")]
+		public string IPAddress
+		{
+			get
+			{
+				return m_ip_address;
+			}
+			set
+			{
+				m_ip_address = value;
+			}
+		}
+
+		[CategoryAttribute("Light Settings"), DescriptionAttribute("Number of RGB Lights")]
+		public int LightCount
+		{
+			get
+			{
+				return m_light_count;
+			}
+			set
+			{
+				m_light_count = value;
+			}
+		}
+
+		[CategoryAttribute("E131 Settings"), DescriptionAttribute("Start Universe")]
+		public ushort Universe
+		{
+			get
+			{
+				return m_universe;
+			}
+			set
+			{
+				m_universe = value;
+			}
+		}
+
+		[CategoryAttribute("E131 Settings"), DescriptionAttribute("Start Cannel")]
+		public int StartChannel
+		{
+			get
+			{
+				return m_start_channel;
+			}
+			set
+			{
+				m_start_channel = value;
+			}
+		}
+
+		[CategoryAttribute("E131 Settings"), DescriptionAttribute("Light Output Brightness(0-255)")]
+		public byte Brightness
+		{
+			get
+			{
+				return m_brightness;
+			}
+			set
+			{
+				m_brightness = value;
+			}
+		}
+
+		[CategoryAttribute("App Settings"), DescriptionAttribute("App Processing Mode")]
+		public Mode ProcessMode
+		{
+			get
+			{
+				return m_processMode;
+			}
+			set
+			{
+				m_processMode = value;
 			}
 		}
 	}
