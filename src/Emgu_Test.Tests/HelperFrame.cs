@@ -22,8 +22,8 @@ namespace Emgu_Test.Tests
             Bitmap testBitmap = GetTestBitmap();
             Image<Rgb, byte> imageCV = testBitmap.ToImage<Rgb, byte>();
             Mat testMat = imageCV.Mat;
-            testMat.Save(@"C:\Users\GWEbe\Downloads\testImage.jpg");
-
+            //testMat.Save(@"C:\Users\GWEbe\Downloads\testImage.jpg");
+            testMat.Save(@"testImage.jpg");
             return testMat;
         }
 
