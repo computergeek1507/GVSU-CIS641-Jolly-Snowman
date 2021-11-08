@@ -20,8 +20,8 @@ namespace Emgu_Test
 
 		readonly string _appDataFolder = string.Format("{0}{1}{2}", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Path.DirectorySeparatorChar, "Emgu_Test");
 
+		ToolTip _frameToolTip;
 		VideoSettings _videoSettings;
-		E131Settings _e131Settings;
 		readonly VideoProcessing _videoProcessing;
 		readonly LightManager _lightManager;
 		readonly E131OutputManager _e131OutputManager;
@@ -31,6 +31,11 @@ namespace Emgu_Test
 			InitializeComponent();
 
 			_listBoxLog = new ListBoxLog(logListBox);
+			_frameToolTip = new ToolTip();
+			_frameToolTip.AutoPopDelay = 5000;
+			_frameToolTip.InitialDelay = 1000;
+			_frameToolTip.ReshowDelay = 500;
+			_frameToolTip.ShowAlways = true;
 
 			if (!(Directory.Exists(_appDataFolder)))
 			{
@@ -38,12 +43,11 @@ namespace Emgu_Test
 			}
 
 			_videoSettings = new VideoSettings();
-			_e131Settings = new E131Settings();
 			LoadSettings();
 			_lightManager = new LightManager();
 			_videoProcessing = new VideoProcessing(_lightManager, _videoSettings);
 
-			_e131OutputManager = new E131OutputManager(_e131Settings, _videoProcessing);
+			_e131OutputManager = new E131OutputManager(_videoSettings, _videoProcessing);
 
 			dataGridViewLights.DataSource = _lightManager.GetBinding();
 
@@ -54,6 +58,9 @@ namespace Emgu_Test
 			_videoProcessing.CurrentFrame += Video_SetFrameValue;
 			_lightManager.MessageSent += Logger_EventLogged;
 			_e131OutputManager.MessageSent += Logger_EventLogged;
+			_e131OutputManager.CurrentNodeSent += E131_SetNodeValue;
+
+			SetMode();
 		}
 
 		private void Logger_EventLogged(object sender, string e)
@@ -82,6 +89,17 @@ namespace Emgu_Test
 			this.frameTrackBar.Scroll += new System.EventHandler(this.frameTrackBar_Scroll);
 		}
 
+		private void E131_SetNodeValue(object sender, int e)
+		{
+			this.frameTrackBar.Scroll -= new System.EventHandler(this.frameTrackBar_Scroll);
+			frameTrackBar.Value = e;
+			//frameTrackBar.Maximum = Convert.ToInt32(e.FrameCount);
+			frameTrackBar.Enabled = true;
+			_frameToolTip.SetToolTip(frameTrackBar, e.ToString());
+			Application.DoEvents();
+			this.frameTrackBar.Scroll += new System.EventHandler(this.frameTrackBar_Scroll);
+		}
+
 		private void openToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -98,22 +116,45 @@ namespace Emgu_Test
 
 		private void videoPropertyGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
 		{
+			SetMode();
 			SaveSettings();
 		}
 
 		private void processVideoButton_Click(object sender, EventArgs e)
 		{
-			_videoProcessing.ProcessVideo();
+			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			{
+				_e131OutputManager.StartOutput();
+			}
+			else
+			{
+				_videoProcessing.ProcessVideo();
+			}
 		}
 
 		private void processFrameButton_Click(object sender, EventArgs e)
 		{
-			_videoProcessing.ProcessSingleFrame(frameTrackBar.Value);
+			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			{
+				_videoProcessing.ProcessSingleFrame(-1);
+			}
+			else
+			{
+				_videoProcessing.ProcessSingleFrame(frameTrackBar.Value);
+			}
 		}
 
 		private void frameTrackBar_Scroll(object sender, EventArgs e)
 		{
-			_videoProcessing.ScrubFrame(frameTrackBar.Value);
+			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			{
+				_e131OutputManager.OutputLight(frameTrackBar.Value);
+				_frameToolTip.SetToolTip(frameTrackBar, frameTrackBar.Value.ToString());
+			}
+			else
+			{
+				_videoProcessing.ScrubFrame(frameTrackBar.Value);
+			}
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -124,7 +165,6 @@ namespace Emgu_Test
 		void LoadSettings()
 		{
 			var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
-			var e131settingFile = _appDataFolder + Path.DirectorySeparatorChar + "E131Settings.xml";
 
 			try
 			{
@@ -134,14 +174,6 @@ namespace Emgu_Test
 					FileStream reader = new FileStream(settingFile, FileMode.Open);
 					_videoSettings = (VideoSettings)serializer.Deserialize(reader);
 					reader.Close();
-				}
-
-				if (File.Exists(e131settingFile))//see if file exists
-				{
-					//XmlSerializer serializer = new XmlSerializer(typeof(E131Settings));
-					//FileStream reader = new FileStream(e131settingFile, FileMode.Open);
-					//_e131Settings = (E131Settings)serializer.Deserialize(reader);
-					//reader.Close();
 				}
 			}
 			catch (Exception ex)
@@ -153,18 +185,12 @@ namespace Emgu_Test
 		void SaveSettings()
 		{
 			var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
-			var e131settingFile = _appDataFolder + Path.DirectorySeparatorChar + "E131Settings.xml";
 			try
 			{
 				XmlSerializer serializer = new XmlSerializer(typeof(VideoSettings));
 				TextWriter writer = new StreamWriter(settingFile);
 				serializer.Serialize(writer, _videoSettings);
 				writer.Close();
-
-				XmlSerializer e131serializer = new XmlSerializer(typeof(E131Settings));
-				TextWriter e131writer = new StreamWriter(e131settingFile);
-				e131serializer.Serialize(e131writer, _e131Settings);
-				e131writer.Close();
 			}
 			catch (Exception ex)
 			{
@@ -194,9 +220,17 @@ namespace Emgu_Test
 			}
 		}
 
-        private void startE131ModeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			_e131OutputManager.StartOutput();
+		private void SetMode()
+		{
+			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			{
+				frameTrackBar.Maximum = Convert.ToInt32(_videoSettings.LightCount);
+				frameTrackBar.Enabled = true;
+				//frameTrackBar.Maximum = Convert.ToInt32(e.FrameCount);
+			}
+			else {
+				frameTrackBar.Enabled = false;
+			}
 		}
-    }
+	}
 }
