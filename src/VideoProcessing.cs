@@ -41,11 +41,11 @@ namespace Emgu_Test
 			_settings = settings;
 
 		}
-		void OnMessageSent(string message) => MessageSent.Invoke(this, message);
+		void OnMessageSent(string message) => MessageSent?.Invoke(this, message);
 
-		void OnImageSent(Bitmap e) => ImageSent.Invoke(this, e);
+		void OnImageSent(Bitmap e) => ImageSent?.Invoke(this, e);
 
-		void OnCurrentFrameSent(FrameEventArgs e) => CurrentFrame.Invoke(this, e);
+		void OnCurrentFrameSent(FrameEventArgs e) => CurrentFrame?.Invoke(this, e);
 
 		public void SendFrameValue( double frame, double total)
 		{
