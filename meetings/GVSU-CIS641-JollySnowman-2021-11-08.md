@@ -19,4 +19,4 @@ Discussion points:
 Goals for next week (include responsibilities)
 
 - Finish unit testing of image analyzer with completed by next Monday. (GE, JM). 
-- Scott will start on the 'Add support for RTSP cameras' task
+- Start on the 'Add support for RTSP cameras' task. (SH).
