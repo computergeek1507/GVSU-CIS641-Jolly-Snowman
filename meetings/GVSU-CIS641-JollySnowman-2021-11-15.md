@@ -9,7 +9,7 @@ Time: 6:00 PM
 Discussion points:
 
 - Discussion of on-going tasks:
-    - Unit testing for the image analyzer was discussed, specifically how much testing coverage we were aiming to complete. It was decided to add a couple more specific test cases before completion(GE, JM, DUE 11/19)
+    - Unit testing for the image analyzer was discussed, specifically how much testing coverage we were aiming to complete. It was decided to add a couple more specific test cases before completion (GE, JM, DUE 11/19)
     - Add support for RTSP cameras, on-going. Scott reports this is going well and should be completed on-time. (SH, DUE 11/19)
     - Unit testing of the model exporter, on-going (JM, DUE 11/19)
     - Allow user to select a region of interest is an upcoming task to start, but will finish up on-going testing and RTSP task first. 
