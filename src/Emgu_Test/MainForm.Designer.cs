@@ -42,7 +42,6 @@ namespace Emgu_Test
             this.exportAsXModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.videoPictureBox = new System.Windows.Forms.PictureBox();
             this.logListBox = new System.Windows.Forms.ListBox();
             this.processVideoButton = new System.Windows.Forms.Button();
@@ -88,7 +87,7 @@ namespace Emgu_Test
             this.dataGridViewLights.RowHeadersWidth = 51;
             this.dataGridViewLights.RowTemplate.Height = 25;
             this.dataGridViewLights.ShowEditingIcon = false;
-            this.dataGridViewLights.Size = new System.Drawing.Size(201, 754);
+            this.dataGridViewLights.Size = new System.Drawing.Size(202, 754);
             this.dataGridViewLights.TabIndex = 0;
             // 
             // Number
@@ -190,19 +189,14 @@ namespace Emgu_Test
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "mp4 files (*.mp4)|*.mp4|All files (*.*)|*.*";
-            // 
             // videoPictureBox
             // 
             this.videoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.videoPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.videoPictureBox.Location = new System.Drawing.Point(3, 41);
             this.videoPictureBox.Name = "videoPictureBox";
-            this.videoPictureBox.Size = new System.Drawing.Size(904, 751);
+            this.videoPictureBox.Size = new System.Drawing.Size(903, 751);
             this.videoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.videoPictureBox.TabIndex = 1;
             this.videoPictureBox.TabStop = false;
@@ -222,7 +216,7 @@ namespace Emgu_Test
             // processVideoButton
             // 
             this.processVideoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.processVideoButton.Location = new System.Drawing.Point(3, 760);
+            this.processVideoButton.Location = new System.Drawing.Point(3, 4);
             this.processVideoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.processVideoButton.Name = "processVideoButton";
             this.processVideoButton.Size = new System.Drawing.Size(127, 31);
@@ -237,14 +231,14 @@ namespace Emgu_Test
             this.videoPropertyGrid.Location = new System.Drawing.Point(3, 4);
             this.videoPropertyGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.videoPropertyGrid.Name = "videoPropertyGrid";
-            this.videoPropertyGrid.Size = new System.Drawing.Size(201, 754);
+            this.videoPropertyGrid.Size = new System.Drawing.Size(202, 754);
             this.videoPropertyGrid.TabIndex = 4;
             this.videoPropertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.videoPropertyGrid_PropertyValueChanged);
             // 
             // processFrameButton
             // 
             this.processFrameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.processFrameButton.Location = new System.Drawing.Point(208, 760);
+            this.processFrameButton.Location = new System.Drawing.Point(210, 4);
             this.processFrameButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.processFrameButton.Name = "processFrameButton";
             this.processFrameButton.Size = new System.Drawing.Size(111, 31);
@@ -259,11 +253,11 @@ namespace Emgu_Test
             | System.Windows.Forms.AnchorStyles.Right)));
             this.frameTrackBar.AutoSize = false;
             this.frameTrackBar.Enabled = false;
-            this.frameTrackBar.Location = new System.Drawing.Point(325, 760);
+            this.frameTrackBar.Location = new System.Drawing.Point(328, 4);
             this.frameTrackBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.frameTrackBar.Maximum = 100;
             this.frameTrackBar.Name = "frameTrackBar";
-            this.frameTrackBar.Size = new System.Drawing.Size(583, 31);
+            this.frameTrackBar.Size = new System.Drawing.Size(578, 31);
             this.frameTrackBar.TabIndex = 6;
             this.frameTrackBar.Scroll += new System.EventHandler(this.frameTrackBar_Scroll);
             // 
@@ -290,14 +284,14 @@ namespace Emgu_Test
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(1141, 797);
-            this.splitContainer1.SplitterDistance = 913;
+            this.splitContainer1.SplitterDistance = 912;
             this.splitContainer1.SplitterWidth = 11;
             this.splitContainer1.TabIndex = 7;
             // 
             // buttonStop
             // 
             this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonStop.Location = new System.Drawing.Point(136, 760);
+            this.buttonStop.Location = new System.Drawing.Point(137, 4);
             this.buttonStop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(66, 31);
@@ -315,7 +309,7 @@ namespace Emgu_Test
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(215, 795);
+            this.tabControl1.Size = new System.Drawing.Size(216, 795);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPageSettings
@@ -325,7 +319,7 @@ namespace Emgu_Test
             this.tabPageSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPageSettings.Name = "tabPageSettings";
             this.tabPageSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPageSettings.Size = new System.Drawing.Size(207, 762);
+            this.tabPageSettings.Size = new System.Drawing.Size(208, 762);
             this.tabPageSettings.TabIndex = 0;
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
@@ -337,7 +331,7 @@ namespace Emgu_Test
             this.tabPageLights.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPageLights.Name = "tabPageLights";
             this.tabPageLights.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPageLights.Size = new System.Drawing.Size(207, 762);
+            this.tabPageLights.Size = new System.Drawing.Size(208, 762);
             this.tabPageLights.TabIndex = 1;
             this.tabPageLights.Text = "Lights";
             this.tabPageLights.UseVisualStyleBackColor = true;
@@ -385,7 +379,6 @@ namespace Emgu_Test
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox videoPictureBox;
 		private System.Windows.Forms.ListBox logListBox;
 		private System.Windows.Forms.Button processVideoButton;

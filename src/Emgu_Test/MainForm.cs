@@ -102,10 +102,17 @@ namespace Emgu_Test
 
 		private void openToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			VideoSelect cameraSelect = new VideoSelect(_videoSettings);
+			if (cameraSelect.ShowDialog() == DialogResult.OK)
 			{
-				_videoProcessing.LoadVideo(openFileDialog1.FileName);
-				Application.DoEvents();
+				videoPropertyGrid.Refresh();
+				SetMode();
+				SaveSettings();
+				if (_videoSettings.ProcessMode == Mode.FileMode )
+				{
+					_videoProcessing.LoadVideo(_videoSettings.FileName);
+					Application.DoEvents();
+				}
 			}
 		}
 
@@ -122,7 +129,8 @@ namespace Emgu_Test
 
 		private void processVideoButton_Click(object sender, EventArgs e)
 		{
-			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			if (_videoSettings.ProcessMode == Mode.LocalCameraMode ||
+				_videoSettings.ProcessMode == Mode.RemoteCameraMode)
 			{
 				_e131OutputManager.StartOutput();
 			}
@@ -134,7 +142,8 @@ namespace Emgu_Test
 
 		private void processFrameButton_Click(object sender, EventArgs e)
 		{
-			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			if (_videoSettings.ProcessMode == Mode.LocalCameraMode ||
+				_videoSettings.ProcessMode == Mode.RemoteCameraMode)
 			{
 				_videoProcessing.ProcessSingleFrame(-1);
 			}
@@ -146,7 +155,8 @@ namespace Emgu_Test
 
 		private void frameTrackBar_Scroll(object sender, EventArgs e)
 		{
-			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			if (_videoSettings.ProcessMode == Mode.LocalCameraMode ||
+				_videoSettings.ProcessMode == Mode.RemoteCameraMode)
 			{
 				_e131OutputManager.OutputLight(frameTrackBar.Value);
 				_frameToolTip.SetToolTip(frameTrackBar, frameTrackBar.Value.ToString());
@@ -222,7 +232,8 @@ namespace Emgu_Test
 
 		private void SetMode()
 		{
-			if (_videoSettings.ProcessMode == Mode.E131Mode)
+			if (_videoSettings.ProcessMode == Mode.LocalCameraMode || 
+				_videoSettings.ProcessMode == Mode.RemoteCameraMode)
 			{
 				frameTrackBar.Maximum = Convert.ToInt32(_videoSettings.LightCount);
 				frameTrackBar.Enabled = true;
@@ -232,5 +243,6 @@ namespace Emgu_Test
 				frameTrackBar.Enabled = false;
 			}
 		}
-	}
+
+    }
 }

@@ -10,9 +10,11 @@ using System.Xml.Serialization;
 
 namespace Emgu_Test
 {
-	public enum Mode {
-		VideoMode = 0,
-		E131Mode = 1
+	public enum Mode
+	{
+		FileMode = 0,
+		LocalCameraMode = 1,
+		RemoteCameraMode = 2
 	}
 
 	///<summary>
@@ -24,8 +26,11 @@ namespace Emgu_Test
 	[XmlRoot("VideoSettings")]
 	public class VideoSettings
 	{
-
+		//input settings
+		Mode m_processMode = Mode.FileMode;
 		private string _fileName;
+		private string _remoteCameraPath;
+		private int _localCameraIndex;
 
 		private int _min_blob_size = 200;
 		private int _max_blob_size = 2000;
@@ -41,14 +46,27 @@ namespace Emgu_Test
 		private int _min_light_size = 30;
 		private int _grid_scale = 10;
 
+		//e131 settings
 		private string m_ip_address = "192.168.1.102";
 		private int m_light_count = 50;
 		private ushort m_universe = 1;
 		private int m_start_channel = 1;
 		private byte m_brightness = 127;
-		Mode m_processMode = Mode.VideoMode;
 
-		[CategoryAttribute("File Settings"), DescriptionAttribute("File Path of Video")]
+		[CategoryAttribute("Input Settings"), DescriptionAttribute("App Input Mode")]
+		public Mode ProcessMode
+		{
+			get
+			{
+				return m_processMode;
+			}
+			set
+			{
+				m_processMode = value;
+			}
+		}
+
+		[CategoryAttribute("Input Settings"), DescriptionAttribute("File Path of Video")]
 		public string FileName
 		{
 			get
@@ -58,6 +76,31 @@ namespace Emgu_Test
 			set
 			{
 				_fileName = value;
+			}
+		}
+
+		[CategoryAttribute("Input Settings"), DescriptionAttribute("Remote Camera Path")]
+		public string RemoteCameraPath
+		{
+			get
+			{
+				return _remoteCameraPath;
+			}
+			set
+			{
+				_remoteCameraPath = value;
+			}
+		}
+		[CategoryAttribute("Input Settings"), DescriptionAttribute("Remote Camera ID")]
+		public int LocalCameraIndex
+		{
+			get
+			{
+				return _localCameraIndex;
+			}
+			set
+			{
+				_localCameraIndex = value;
 			}
 		}
 
@@ -294,19 +337,6 @@ namespace Emgu_Test
 			{
 				m_brightness = value;
 			}
-		}
-
-		[CategoryAttribute("App Settings"), DescriptionAttribute("App Processing Mode")]
-		public Mode ProcessMode
-		{
-			get
-			{
-				return m_processMode;
-			}
-			set
-			{
-				m_processMode = value;
-			}
-		}
+		}	
 	}
 }
