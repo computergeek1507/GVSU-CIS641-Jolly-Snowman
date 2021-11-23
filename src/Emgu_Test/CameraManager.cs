@@ -1,15 +1,14 @@
 ﻿using DirectShowLib;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Emgu_Test
 {
     class CameraManager
     {
+        /// <summary>
+        /// Get a List of all the Local Cameras from Microsoft's Directshow library 
+        /// </summary>
+        /// <returns>list of camera names</returns>
         public static List<string> ListOfAttachedCameras()
         {
             List<string> cameras = new List<string>();

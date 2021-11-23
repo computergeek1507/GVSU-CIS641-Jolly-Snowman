@@ -12,9 +12,9 @@ namespace Emgu_Test
 {
 	public enum Mode
 	{
-		FileMode = 0,
-		LocalCameraMode = 1,
-		RemoteCameraMode = 2
+		FileMode = 0,			//Video File Read Mode
+		LocalCameraMode = 1,	//Local Web Camera Mode
+		RemoteCameraMode = 2	//Remote RTSP/HTML Camera Mode
 	}
 
 	///<summary>

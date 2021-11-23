@@ -80,14 +80,13 @@ namespace Emgu_Test
             this.Diameter});
             this.dataGridViewLights.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewLights.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewLights.Location = new System.Drawing.Point(3, 4);
-            this.dataGridViewLights.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewLights.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewLights.Name = "dataGridViewLights";
             this.dataGridViewLights.RowHeadersVisible = false;
             this.dataGridViewLights.RowHeadersWidth = 51;
             this.dataGridViewLights.RowTemplate.Height = 25;
             this.dataGridViewLights.ShowEditingIcon = false;
-            this.dataGridViewLights.Size = new System.Drawing.Size(202, 754);
+            this.dataGridViewLights.Size = new System.Drawing.Size(175, 562);
             this.dataGridViewLights.TabIndex = 0;
             // 
             // Number
@@ -99,7 +98,7 @@ namespace Emgu_Test
             this.Number.Name = "Number";
             this.Number.ReadOnly = true;
             this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Number.Width = 69;
+            this.Number.Width = 57;
             // 
             // Position
             // 
@@ -110,7 +109,7 @@ namespace Emgu_Test
             this.Position.Name = "Position";
             this.Position.ReadOnly = true;
             this.Position.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Position.Width = 67;
+            this.Position.Width = 56;
             // 
             // ScalePos
             // 
@@ -121,7 +120,7 @@ namespace Emgu_Test
             this.ScalePos.Name = "ScalePos";
             this.ScalePos.ReadOnly = true;
             this.ScalePos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ScalePos.Width = 72;
+            this.ScalePos.Width = 59;
             // 
             // Diameter
             // 
@@ -132,7 +131,7 @@ namespace Emgu_Test
             this.Diameter.Name = "Diameter";
             this.Diameter.ReadOnly = true;
             this.Diameter.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Diameter.Width = 77;
+            this.Diameter.Width = 61;
             // 
             // menuStrip1
             // 
@@ -141,8 +140,8 @@ namespace Emgu_Test
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1168, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1022, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -155,37 +154,37 @@ namespace Emgu_Test
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.openToolStripMenuItem.Text = "Load Video";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(164, 6);
             // 
             // exportAsXModelToolStripMenuItem
             // 
             this.exportAsXModelToolStripMenuItem.Name = "exportAsXModelToolStripMenuItem";
-            this.exportAsXModelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportAsXModelToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.exportAsXModelToolStripMenuItem.Text = "Export As xModel";
             this.exportAsXModelToolStripMenuItem.Click += new System.EventHandler(this.exportAsXModelToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -194,9 +193,10 @@ namespace Emgu_Test
             this.videoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.videoPictureBox.Location = new System.Drawing.Point(3, 41);
+            this.videoPictureBox.Location = new System.Drawing.Point(3, 31);
+            this.videoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.videoPictureBox.Name = "videoPictureBox";
-            this.videoPictureBox.Size = new System.Drawing.Size(903, 751);
+            this.videoPictureBox.Size = new System.Drawing.Size(789, 563);
             this.videoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.videoPictureBox.TabIndex = 1;
             this.videoPictureBox.TabStop = false;
@@ -206,20 +206,17 @@ namespace Emgu_Test
             this.logListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.logListBox.FormattingEnabled = true;
-            this.logListBox.ItemHeight = 20;
-            this.logListBox.Location = new System.Drawing.Point(14, 841);
-            this.logListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.logListBox.ItemHeight = 15;
+            this.logListBox.Location = new System.Drawing.Point(12, 631);
             this.logListBox.Name = "logListBox";
-            this.logListBox.Size = new System.Drawing.Size(1140, 124);
+            this.logListBox.Size = new System.Drawing.Size(998, 94);
             this.logListBox.TabIndex = 2;
             // 
             // processVideoButton
             // 
-            this.processVideoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.processVideoButton.Location = new System.Drawing.Point(3, 4);
-            this.processVideoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.processVideoButton.Location = new System.Drawing.Point(3, 3);
             this.processVideoButton.Name = "processVideoButton";
-            this.processVideoButton.Size = new System.Drawing.Size(127, 31);
+            this.processVideoButton.Size = new System.Drawing.Size(111, 23);
             this.processVideoButton.TabIndex = 3;
             this.processVideoButton.Text = "Start Processing";
             this.processVideoButton.UseVisualStyleBackColor = true;
@@ -228,20 +225,17 @@ namespace Emgu_Test
             // videoPropertyGrid
             // 
             this.videoPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.videoPropertyGrid.Location = new System.Drawing.Point(3, 4);
-            this.videoPropertyGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.videoPropertyGrid.Location = new System.Drawing.Point(3, 3);
             this.videoPropertyGrid.Name = "videoPropertyGrid";
-            this.videoPropertyGrid.Size = new System.Drawing.Size(202, 754);
+            this.videoPropertyGrid.Size = new System.Drawing.Size(175, 562);
             this.videoPropertyGrid.TabIndex = 4;
             this.videoPropertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.videoPropertyGrid_PropertyValueChanged);
             // 
             // processFrameButton
             // 
-            this.processFrameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.processFrameButton.Location = new System.Drawing.Point(210, 4);
-            this.processFrameButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.processFrameButton.Location = new System.Drawing.Point(184, 3);
             this.processFrameButton.Name = "processFrameButton";
-            this.processFrameButton.Size = new System.Drawing.Size(111, 31);
+            this.processFrameButton.Size = new System.Drawing.Size(97, 23);
             this.processFrameButton.TabIndex = 5;
             this.processFrameButton.Text = "Process Frame";
             this.processFrameButton.UseVisualStyleBackColor = true;
@@ -249,15 +243,14 @@ namespace Emgu_Test
             // 
             // frameTrackBar
             // 
-            this.frameTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.frameTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.frameTrackBar.AutoSize = false;
             this.frameTrackBar.Enabled = false;
-            this.frameTrackBar.Location = new System.Drawing.Point(328, 4);
-            this.frameTrackBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.frameTrackBar.Location = new System.Drawing.Point(287, 3);
             this.frameTrackBar.Maximum = 100;
             this.frameTrackBar.Name = "frameTrackBar";
-            this.frameTrackBar.Size = new System.Drawing.Size(578, 31);
+            this.frameTrackBar.Size = new System.Drawing.Size(505, 23);
             this.frameTrackBar.TabIndex = 6;
             this.frameTrackBar.Scroll += new System.EventHandler(this.frameTrackBar_Scroll);
             // 
@@ -268,8 +261,7 @@ namespace Emgu_Test
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Location = new System.Drawing.Point(14, 36);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 27);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -283,18 +275,16 @@ namespace Emgu_Test
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1141, 797);
-            this.splitContainer1.SplitterDistance = 912;
-            this.splitContainer1.SplitterWidth = 11;
+            this.splitContainer1.Size = new System.Drawing.Size(998, 598);
+            this.splitContainer1.SplitterDistance = 797;
+            this.splitContainer1.SplitterWidth = 10;
             this.splitContainer1.TabIndex = 7;
             // 
             // buttonStop
             // 
-            this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonStop.Location = new System.Drawing.Point(137, 4);
-            this.buttonStop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonStop.Location = new System.Drawing.Point(120, 3);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(66, 31);
+            this.buttonStop.Size = new System.Drawing.Size(58, 23);
             this.buttonStop.TabIndex = 7;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
@@ -306,20 +296,18 @@ namespace Emgu_Test
             this.tabControl1.Controls.Add(this.tabPageLights);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(216, 795);
+            this.tabControl1.Size = new System.Drawing.Size(189, 596);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPageSettings
             // 
             this.tabPageSettings.Controls.Add(this.videoPropertyGrid);
-            this.tabPageSettings.Location = new System.Drawing.Point(4, 29);
-            this.tabPageSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPageSettings.Location = new System.Drawing.Point(4, 24);
             this.tabPageSettings.Name = "tabPageSettings";
-            this.tabPageSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPageSettings.Size = new System.Drawing.Size(208, 762);
+            this.tabPageSettings.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageSettings.Size = new System.Drawing.Size(181, 568);
             this.tabPageSettings.TabIndex = 0;
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
@@ -327,11 +315,10 @@ namespace Emgu_Test
             // tabPageLights
             // 
             this.tabPageLights.Controls.Add(this.dataGridViewLights);
-            this.tabPageLights.Location = new System.Drawing.Point(4, 29);
-            this.tabPageLights.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPageLights.Location = new System.Drawing.Point(4, 24);
             this.tabPageLights.Name = "tabPageLights";
-            this.tabPageLights.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPageLights.Size = new System.Drawing.Size(208, 762);
+            this.tabPageLights.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageLights.Size = new System.Drawing.Size(181, 568);
             this.tabPageLights.TabIndex = 1;
             this.tabPageLights.Text = "Lights";
             this.tabPageLights.UseVisualStyleBackColor = true;
@@ -344,14 +331,15 @@ namespace Emgu_Test
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 983);
+            this.ClientSize = new System.Drawing.Size(1022, 737);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.logListBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "Video2xLights";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

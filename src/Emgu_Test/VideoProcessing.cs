@@ -24,28 +24,39 @@ namespace Emgu_Test
 		public event EventHandler<Bitmap> ImageSent;
 		public event EventHandler<string> MessageSent;
 
-		//int NODEON = 500;
-		//int NODEOFF = 200;
-
-		VideoSettings _settings;
-		VideoCapture _videoCapture;
-		LightManager _lightManager;
+		VideoSettings _settings;					//Main settings opject
+		VideoCapture _videoCapture;					//Emgu Video Device object
+		LightManager _lightManager;					//object to store light location data
 
 		double _currentFrameNo = 0;
 		double _totalFrames = 0;
 		double _fps = 0;
 		bool _stop = false;
-		int _camera = -1;
+		int _localCamera = -1;                      // store local index to only reload on changed value in setting abj
+		string _remoteCamera = string.Empty;		// store remote path to only reload on changed value in setting abj
 
 		public VideoProcessing(LightManager lightManager, VideoSettings settings) {
 			_lightManager = lightManager;
 			_settings = settings;
 
 		}
+
+		/// <summary>
+		/// Event to send messages to the logger box
+		/// </summary>
+		/// <param name="message">Log Message</param>
 		void OnMessageSent(string message) => MessageSent?.Invoke(this, message);
 
+		/// <summary>
+		/// Send Captured Frame to the main GUI
+		/// </summary>
+		/// <param name="e"></param>
 		void OnImageSent(Bitmap e) => ImageSent?.Invoke(this, e);
 
+		/// <summary>
+		/// Event to update the slider to provide feedback to the user
+		/// </summary>
+		/// <param name="e">Current Frame and Total Frames of Video</param>
 		void OnCurrentFrameSent(FrameEventArgs e) => CurrentFrame?.Invoke(this, e);
 
 		public void SendFrameValue( double frame, double total)
@@ -62,6 +73,10 @@ namespace Emgu_Test
 			_stop = stop;
 		}
 
+		/// <summary>
+		/// load a video file for processing
+		/// </summary>
+		/// <param name="fileName">video file path</param>
 		public void LoadVideo(string fileName)
 		{
 			//_settings = settings;
@@ -73,8 +88,13 @@ namespace Emgu_Test
 
 			SendFrameValue(0 , _totalFrames);
 			OnMessageSent("Video Loaded: " + _settings.FileName);
+			OnMessageSent("openCV Backend : " + _videoCapture.BackendName);
 		}
 
+		/// <summary>
+		/// Campture a single frame and process for lights
+		/// </summary>
+		/// <param name="frameIndex">index of frame to process</param>
 		public void ProcessSingleFrame(int frameIndex)
 		{
 			if (frameIndex != -1)
@@ -86,9 +106,16 @@ namespace Emgu_Test
 			ProcessFrame(frame, true);
 		}
 
+		/// <summary>
+		/// capture a frame from the video source and send to the GUI
+		/// </summary>
+		/// <param name="frameIndex">index of frame to process</param>
 		public void ScrubFrame(int frameIndex)
 		{
-			_videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, frameIndex);
+			if (frameIndex != -1)
+			{
+				_videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, frameIndex);
+			}
 
 			var frame = _videoCapture.QueryFrame();
 			if (null == frame)
@@ -98,6 +125,9 @@ namespace Emgu_Test
 			OnImageSent(frame.ToBitmap());
 		}
 
+		/// <summary>
+		/// Loop through the video file and look for lights 
+		/// </summary>
 		public void ProcessVideo()
 		{
 			_stop = false;
@@ -116,6 +146,9 @@ namespace Emgu_Test
 			}
 		}
 
+		/// <summary>
+		/// Clear stored light data
+		/// </summary>
 		public void ResetVideoFileData()
 		{
 			_lightManager.Clear();
@@ -123,16 +156,54 @@ namespace Emgu_Test
 			_videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, _currentFrameNo);
 		}
 
-		public void SetupCamera(int cameraIdx)
+		/// <summary>
+		/// Setup Emgu video capture with a remote or local camera
+		/// </summary>
+		public void SetupCamera()
 		{
 			_lightManager.Clear();
-			if (cameraIdx != _camera)
+			try
 			{
-				_videoCapture = new VideoCapture(cameraIdx);
-				_camera = cameraIdx;
+				if (_settings.ProcessMode == Mode.LocalCameraMode)
+				{
+					_remoteCamera = string.Empty;//clear other interface, so it gets loaded on mode change
+					if (_settings.LocalCameraIndex != _localCamera)//only new up VideoCapture object if camera index changes
+					{						
+						_videoCapture = new VideoCapture(_settings.LocalCameraIndex);
+						_localCamera = _settings.LocalCameraIndex;
+						ScrubFrame(-1);
+						OnMessageSent("Local Camera ID Loaded: " + _settings.LocalCameraIndex.ToString());
+						OnMessageSent("openCV Backend : " + _videoCapture.BackendName);
+					}
+				}
+				else if (_settings.ProcessMode == Mode.RemoteCameraMode)
+				{
+					_localCamera = -1;//clear other interface, so it gets loaded on mode change
+					if (_settings.RemoteCameraPath != _remoteCamera)//only new up VideoCapture object if path changes
+					{						
+						_videoCapture = new VideoCapture(_settings.RemoteCameraPath);
+						_remoteCamera = _settings.RemoteCameraPath;
+						ScrubFrame(-1);
+						OnMessageSent("Remote Camera Loaded: " + _settings.RemoteCameraPath );
+						OnMessageSent("openCV Backend : " + _videoCapture.BackendName);
+					}
+				}				
+			} 
+			catch (Exception ex)
+			{
+				//reset
+				_localCamera = -1;
+				_remoteCamera = string.Empty;
+				OnMessageSent("Failed to Load: " + _settings.ProcessMode.ToString());
+				OnMessageSent(ex.Message);
 			}
 		}
 
+		/// <summary>
+		/// Capture current frame and run light detection code on frame
+		/// </summary>
+		/// <param name="view_only">if true, only display the found light, do not add to light manager</param>
+		/// <returns>true if light is found</returns>
 		public bool ProcessCameraFrame(bool view_only = false)
 		{
 			var frame = _videoCapture.QueryFrame();
@@ -143,6 +214,12 @@ namespace Emgu_Test
 			return ProcessFrame(frame, view_only);
 		}
 
+		/// <summary>
+		/// run openCV algorithms(blur, grey value,E rode, Dilate, & blob) on frame and attempt to find a light
+		/// </summary>
+		/// <param name="frame_in">frame to process</param>
+		/// <param name="view_only">if true, only display the found light, do not add to light manager</param>
+		/// <returns>true if light is found</returns>
 		public bool ProcessFrame(Mat frame_in, bool view_only = false)
 		{
 			//https://learnopencv.com/blob-detection-using-opencv-python-c/
@@ -240,6 +317,10 @@ namespace Emgu_Test
 			return foundNode;
 		}
 
+		/// <summary>
+		/// draw a blue circle on found light and text for numbering on image 
+		/// </summary>
+		/// <param name="mat"></param>
 		private void DrawFoundNodes(Mat mat)
 		{
 			MCvScalar color = new MCvScalar(255, 0, 0);
