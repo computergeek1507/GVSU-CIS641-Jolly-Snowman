@@ -23,7 +23,7 @@ namespace Emgu_Test
 			_source.DataSource = _lights;
 		}
 
-		void OnMessageSent(string message) => MessageSent.Invoke(this, message);
+		void OnMessageSent(string message) => MessageSent?.Invoke(this, message);
 
 		public bool AddLight(PointF loc, float size)
 		{
