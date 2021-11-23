@@ -145,6 +145,7 @@ namespace Emgu_Test
 			if (_videoSettings.ProcessMode == Mode.LocalCameraMode ||
 				_videoSettings.ProcessMode == Mode.RemoteCameraMode)
 			{
+				_videoProcessing.SetupCamera();
 				_videoProcessing.ProcessSingleFrame(-1);
 			}
 			else
@@ -210,9 +211,15 @@ namespace Emgu_Test
 
 		private void MainForm_Shown(object sender, EventArgs e)
 		{
-			if (File.Exists(_videoSettings.FileName))//see if file exists
+			if (_videoSettings.ProcessMode == Mode.FileMode)
 			{
-				_videoProcessing.LoadVideo(_videoSettings.FileName);
+				if (File.Exists(_videoSettings.FileName))//see if file exists
+				{
+					_videoProcessing.LoadVideo(_videoSettings.FileName);
+				}
+			}
+			else {
+				_videoProcessing.SetupCamera();
 			}
 		}
 

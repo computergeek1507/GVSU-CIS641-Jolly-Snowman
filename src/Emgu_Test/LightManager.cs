@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Emgu_Test
@@ -12,7 +10,7 @@ namespace Emgu_Test
 	public class LightManager
 	{
 		readonly List<Light> _lights = new List<Light>();
-		private readonly BindingSource _source = new BindingSource();
+		private readonly BindingSource _source = new BindingSource(); //binding is required to update GUI grid 
 
 		public event EventHandler<string> MessageSent;
 
@@ -23,8 +21,18 @@ namespace Emgu_Test
 			_source.DataSource = _lights;
 		}
 
+		/// <summary>
+		/// Event to send messages to the logger box
+		/// </summary>
+		/// <param name="message">Log Message</param>
 		void OnMessageSent(string message) => MessageSent.Invoke(this, message);
 
+		/// <summary>
+		/// Added a Light
+		/// </summary>
+		/// <param name="loc">XY location</param>
+		/// <param name="size">light radius</param>
+		/// <returns></returns>
 		public bool AddLight(PointF loc, float size)
 		{
 			Point locI = Point.Round(loc);
@@ -41,11 +49,14 @@ namespace Emgu_Test
 				Diameter = (int)Math.Round(size),
 				Number = _index
 			});
-			++_index;
+			++_index; //increment the light count
 			_source.ResetBindings(false);
 			return true;
 		}
 
+		/// <summary>
+		/// Clear Stored Light Data
+		/// </summary>
 		public void Clear()
 		{
 			_lights.Clear();
@@ -98,6 +109,11 @@ namespace Emgu_Test
 			return GetBoundingSize(scale);
 		}
 
+		/// <summary>
+		/// Export the Light data as xModel file for the xLights application
+		/// </summary>
+		/// <param name="filename">Output file path</param>
+		/// <param name="scale">scale the picture resolution to the xModel grid size</param>
 		public void ExportModel(string filename, int scale)
 		{
 			FileInfo file = new FileInfo(filename);
@@ -167,6 +183,10 @@ namespace Emgu_Test
 			_source.ResetBindings(false);
 		}
 
+		/// <summary>
+		/// List of all the lights found
+		/// </summary>
+		/// <returns></returns>
 		public List<Light> GetLights() { return _lights; }
 
 		public BindingSource GetBinding()

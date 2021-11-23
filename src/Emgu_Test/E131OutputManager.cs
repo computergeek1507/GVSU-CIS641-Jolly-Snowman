@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -28,10 +26,21 @@ namespace Emgu_Test
             _processer = processer;
         }
 
+        /// <summary>
+        /// Event to send messages to the logger box
+        /// </summary>
+        /// <param name="message">Log Message</param>
         void OnMessageSent(string message) => MessageSent.Invoke(this, message);
 
+        /// <summary>
+        /// Event to update the node slider to provide feedback to the user
+        /// </summary>
+        /// <param name="node">Curent Light being processed</param>
         void OnCurrentNodeSent(int node) => CurrentNodeSent.Invoke(this, node);
 
+        /// <summary>
+        /// Loop thought the number of lights, send a packet to turn on a light then trigger a frame capture
+        /// </summary>
         public void StartOutput() 
         {
             _stop = false;
@@ -39,7 +48,7 @@ namespace Emgu_Test
             {
                 return;
             }
-            _processer.SetupCamera(0);
+            _processer.SetupCamera();
             for (int node = 0; node < _settings.LightCount; ++node)
             {
                 if (_stop)
@@ -54,11 +63,19 @@ namespace Emgu_Test
             }
         }
 
+        /// <summary>
+        /// Stop the Light Output Capture
+        /// </summary>
         public void StopOutput()
         {
             _stop = true;
         }
 
+        /// <summary>
+        /// Send E131 Packet to the Light Controller
+        /// </summary>
+        /// <param name="nodeIndex">Light Index</param>
+        /// <returns>Worked</returns>
         private bool SendPacket(int nodeIndex)
         {
             try
@@ -69,12 +86,16 @@ namespace Emgu_Test
                 string sourceName = "My lovely source";
                 SacnPacketFactory factory = new SacnPacketFactory(cid, sourceName);
 
+                /// an E.131 Universes is a metadata ID to identifiy the packet the light controller should use/respond to
+                /// An E.131 Universes have a Max channel buffer size of 512
+                /// 512 divided by 3 (channels per RGB light) is 170.667, round to 170 or 510 channels.
+                /// increment to the next universe when we go over the max buffer size.
                 ushort unv = _settings.Universe;
                 unv += (ushort)(nodeIndex / 170);
                 nodeIndex = (nodeIndex % 170);
                 byte[] values = GetNodeData(nodeIndex);
 
-                var packet = factory.CreateDataPacket(_settings.Universe, values);
+                var packet = factory.CreateDataPacket(unv, values);
                 using var sacnSender = new UnicastSacnSender(address);
 
                 sacnSender.Send(packet);
@@ -87,15 +108,17 @@ namespace Emgu_Test
             }
         }
 
+        /// <summary>
+        /// Create and Populate an E131 buffer with the data to turn a Light on
+        /// </summary>
+        /// <param name="index">Light Index</param>
+        /// <returns>E131 Channel buffer</returns>
         private byte[] GetNodeData(int index) 
         {
             byte[] values = new byte[512];
-            Array.Fill(values, (byte)0x00);
+            Array.Fill(values, (byte)0x00);//fill the channel buffer with blank(off) light data
 
-            //int index1 = (index * 3);
-            //int index2 = (index * 3) + 1;
-            //int index3 = (index * 3) + 2;
-            for (int i = 0; i < 3; ++i)
+            for (int i = 0; i < 3; ++i)//only populate the currents LEDs three RGB channels with "on" data
             {
                 values[(index * 3) + i] = _settings.Brightness;
             }
@@ -103,6 +126,10 @@ namespace Emgu_Test
             return values;
         }
 
+        /// <summary>
+        /// Ping the Light Controller to see if it is active on the network
+        /// </summary>
+        /// <returns>reachable</returns>
         private bool PingIP()
         {
             try
@@ -138,6 +165,9 @@ namespace Emgu_Test
             }
         }
 
+        /// <summary>
+        /// Send a packet to turn on one light then trigger a frame capture
+        /// </summary>
         internal void OutputLight(int light)
         {
             //_stop = false;
@@ -145,7 +175,7 @@ namespace Emgu_Test
             {
                 return;
             }
-            _processer.SetupCamera(0);
+            _processer.SetupCamera();
 
             bool worked = SendPacket(light);
             //OnCurrentNodeSent(node);
