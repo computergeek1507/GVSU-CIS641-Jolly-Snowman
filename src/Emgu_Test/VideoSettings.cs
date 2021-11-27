@@ -53,7 +53,7 @@ namespace Emgu_Test
 		private int m_start_channel = 1;
 		private byte m_brightness = 127;
 
-		[CategoryAttribute("Input Settings"), DescriptionAttribute("App Input Mode")]
+		[CategoryAttribute("Input Settings"), DisplayName("Process Mode"), DescriptionAttribute("App Input Mode")]
 		public Mode ProcessMode
 		{
 			get
@@ -66,7 +66,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Input Settings"), DescriptionAttribute("File Path of Video")]
+		[CategoryAttribute("Input Settings"), DisplayName("File Name"), DescriptionAttribute("File Path of Video")]
 		public string FileName
 		{
 			get
@@ -79,7 +79,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Input Settings"), DescriptionAttribute("Remote Camera Path")]
+		[CategoryAttribute("Input Settings"), DisplayName("Remote Camera Path"), DescriptionAttribute("Remote Camera Path")]
 		public string RemoteCameraPath
 		{
 			get
@@ -91,7 +91,7 @@ namespace Emgu_Test
 				_remoteCameraPath = value;
 			}
 		}
-		[CategoryAttribute("Input Settings"), DescriptionAttribute("Remote Camera ID")]
+		[CategoryAttribute("Input Settings"), DisplayName("Local Camera"), DescriptionAttribute("Remote Camera ID")]
 		public int LocalCameraIndex
 		{
 			get
@@ -104,7 +104,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Minimum Blob Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Blob Size"), DescriptionAttribute("Minimum Blob Size")]
 		public int MinBlobSize
 		{
 			get
@@ -117,7 +117,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[ CategoryAttribute("Video Settings"), DescriptionAttribute("Maximum Blob Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Maximum Blob Size"), DescriptionAttribute("Maximum Blob Size")]
 		public int MaxBlobSize
 		{
 			get
@@ -131,7 +131,7 @@ namespace Emgu_Test
 		}
 
 
-		[ CategoryAttribute("Video Settings"), DescriptionAttribute("Grey Value Threshold(0-255)")]
+		[CategoryAttribute("Video Settings"), DisplayName("Grey Threshold"), DescriptionAttribute("Grey Value Threshold(0-255)")]
 		public int GreyThreshold
 		{
 			get
@@ -144,7 +144,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Blob Erode Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Erode Size"), DescriptionAttribute("Blob Erode Size")]
 		public int ErodeSize
 		{
 			get
@@ -157,7 +157,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Blob Dilate Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Dilate Size"), DescriptionAttribute("Blob Dilate Size")]
 		public int DilateSize
 		{
 			get
@@ -170,7 +170,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Blur Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Blur Size"), DescriptionAttribute("Blur Size")]
 		public int BlurSize
 		{
 			get
@@ -183,7 +183,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Color(0-255)")]
+		[CategoryAttribute("Video Settings"), DisplayName("Color"), DescriptionAttribute("Color(0-255)")]
 		public byte Color
 		{
 			get
@@ -196,7 +196,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Min Circularity")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Circularity"), DescriptionAttribute("Min Circularity")]
 		public float MinCircularity
 		{
 			get
@@ -209,7 +209,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Min Convexity")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Convexity"), DescriptionAttribute("Min Convexity")]
 		public float MinConvexity
 		{
 			get
@@ -222,7 +222,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DescriptionAttribute("Min Inertia Ratio")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Inertia"), DescriptionAttribute("Min Inertia Ratio")]
 		public float MinInertiaRatio
 		{
 			get
@@ -248,7 +248,7 @@ namespace Emgu_Test
 			}
 		}*/
 
-		[CategoryAttribute("Light Settings"), DescriptionAttribute("Minimum Light Size")]
+		[CategoryAttribute("Light Settings"), DisplayName("Minimum Light Size"), DescriptionAttribute("Minimum Light Size")]
 		public int MinLightSize
 		{
 			get
@@ -261,7 +261,7 @@ namespace Emgu_Test
 			}
 		}
 		
-		[CategoryAttribute("Export Settings"), DescriptionAttribute("Grid Scale")]
+		[CategoryAttribute("Export Settings"), DisplayName("Grid Scale"), DescriptionAttribute("Grid Scale")]
 		public int GridScale
 		{
 			get
@@ -274,7 +274,7 @@ namespace Emgu_Test
 			}
 		}
 		
-		[CategoryAttribute("E131 Settings"), DescriptionAttribute("E131 IP Address of Controller")]
+		[CategoryAttribute("E131 Settings"), DisplayName("E131 IP Address"), DescriptionAttribute("E131 IP Address of Controller")]
 		public string IPAddress
 		{
 			get
@@ -287,7 +287,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Light Settings"), DescriptionAttribute("Number of RGB Lights")]
+		[CategoryAttribute("Light Settings"), DisplayName("Light Count"), DescriptionAttribute("Number of RGB Lights")]
 		public int LightCount
 		{
 			get
@@ -300,7 +300,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("E131 Settings"), DescriptionAttribute("Start Universe")]
+		[CategoryAttribute("E131 Settings"), DisplayName("Universe"), DescriptionAttribute("Start Universe")]
 		public ushort Universe
 		{
 			get
@@ -313,7 +313,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("E131 Settings"), DescriptionAttribute("Start Cannel")]
+		[CategoryAttribute("E131 Settings"), DisplayName("Start Channel"), DescriptionAttribute("Start Cannel")]
 		public int StartChannel
 		{
 			get
@@ -326,7 +326,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("E131 Settings"), DescriptionAttribute("Light Output Brightness(0-255)")]
+		[CategoryAttribute("E131 Settings"), DisplayName("Brightness"), DescriptionAttribute("Light Output Brightness(0-255)")]
 		public byte Brightness
 		{
 			get

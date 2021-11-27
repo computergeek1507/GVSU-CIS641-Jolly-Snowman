@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\Emgu_Test",
+    "\\src\\Properties"
   ],
   "PreviewInSolutionExplorer": false
 }
