@@ -1,6 +1,21 @@
-# CIS641 Meeting Instructions
+# CIS641 Jolly Snowman Meeting
 
-Hold a team meeting at least once a week in some format.  Copy the following template below into a new document, naming it GVSU-CIS641-TEAMNAME-YYYY-MM-DD (replacing TEAMNAME with your team's name and the appropriate date fields).  Commit it to this folder, ensuring it is up by each Tuesday by 11:59pm.  There should be a unique document for each meeting held.
+Meetings were held weekly on Monday evenings. Meeting minutes can be found in this folder.
+
+- September:
+  - [9/20](GVSU-CIS641-JollySnowman-2021-09-20.md)
+  - [9/27](GVSU-CIS641-JollySnowman-2021-09-27.md)
+- October:
+  - [10/04](GVSU-CIS641-JollySnowman-2021-10-04.md)
+  - [10/11](GVSU-CIS641-JollySnowman-2021-10-11.md)
+  - [10/23](GVSU-CIS641-JollySnowman-2021-10-21.md)
+- November:
+  - [11/01](GVSU-CIS641-JollySnowman-2021-11-01.md)
+  - [11/08](GVSU-CIS641-JollySnowman-2021-11-08.md)
+  - [11/15](GVSU-CIS641-JollySnowman-2021-11-15.md)
+  - [11/29](GVSU-CIS641-JollySnowman-2021-11-29.md)
+- December:
+  - [12/06](GVSU-CIS641-JollySnowman-2021-12-06.md)
 
 ## Meeting minutes template
 
