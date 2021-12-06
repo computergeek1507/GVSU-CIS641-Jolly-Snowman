@@ -1,21 +1,21 @@
-### Artifacts Directory
+# Artifacts Directory
 
-#### Prop Videos
+### Prop Videos
 
 These are the video files we used during construction of the program. They are videos that sequence LEDs light by light to allow the video processor to locate each one.
 
-- PXL_20210927_035523415.mp4
-- PXL_20210927_040513568.mp4
+- [Snowflake](PXL_20210927_035523415.mp4)
+- [Stocking](PXL_20210927_040513568.mp4)
 
-#### Test Videos
+### Test Videos
 
 Videos used for unit testing purposes reside within this folder. The keyword "Beginning" is reference to the flashing of all lights at the beginning of the video. This flashing was orginally going to be used to mark the beginning of the analysis, but that was not included in the final design.
 
-- Test_BeginningAndNone.mp4
-- Test_BeginningAndOne.mp4
-- Test_NoBeginningAndOne.mp4
+- [Test_BeginningAndNone](Test_BeginningAndNone.mp4)
+- [Test_BeginningAndOne](Test_BeginningAndOne.mp4)
+- [Test_NoBeginningAndOne](Test_NoBeginningAndOne.mp4)
 
-#### Functional Models
+### Functional Models
 
 This folder contains use case diagrams, activity diagrams, and use case descriptions. These models depict the design of the program in a visual format.
 
@@ -29,15 +29,15 @@ This folder contains use case diagrams, activity diagrams, and use case descript
 - Use Case Diagram - GUI.drawio.png
 - Use Case XModel_export.drawio.png
 
-#### HCI
+### HCI
 
 The human centered interface design models can be found within this folder.
 
-- WND.drawio.pdf
+- [Windows Naviation Diagram](WND.drawio.pdf)
 
 #### Presentation Assets
 
 Pictures and videos created by the group specifically created for the purpose of presentation reside within this folder. 
 
-- ApplicationScreenshot.png
-- Video_Demo.mp4
+- [Applation Screenshot](ApplicationScreenshot.png)
+- [Midterm Video Demo](Video_Demo.mp4)
