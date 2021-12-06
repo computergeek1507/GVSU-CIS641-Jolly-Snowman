@@ -7,12 +7,9 @@ The goal of this project is to develop an application that can automate the task
 
 ## About Jolly Snowman
 
-You can read our <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/docs/proposal.md
-">complete project proposal.</a> <br>
-You can read our <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/docs/software_requirements_specification.md
-">software requirements.</a> <br>
-You can view our movie files used for testing <a href="https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/tree/master/artifacts
-">here.</a> <br>
+You can read our [project proposal](docs/proposal.md) <br>
+You can read our [software specifications](docs/software_requirements_specification.md) <br>
+You can view our movie files used for testing [here](artifacts/) <br>
 
 ## Team Members
 
