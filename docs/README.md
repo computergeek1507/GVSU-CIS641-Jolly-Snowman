@@ -1,3 +1,20 @@
 # Documents Directory
 
-Files, documents, and presentations required for proposal, midterm, and final deliverables are stored here. 
+## Presentation Material
+
+PowerPoint presentations and other documents used during project presentations.
+
+- [Midterm Powerpoint](JollySnowmanMidtermPresentation.ppt.pdf)
+
+## Proposal
+
+The initial proposal for the project.
+
+- [Jolly Snowman project proposal](proposal.md)
+
+## Project Specification
+
+Project specifications from the beginning and the end of the project. The final specifications outline the final state of the project, and the initial specification outline the plans for the project at its genesis.
+
+- [Initial Specification](software_requirements_specification.md)
+- [Final Specification](software_requirements_specification_final.md)
