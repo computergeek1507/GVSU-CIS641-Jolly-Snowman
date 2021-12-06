@@ -38,7 +38,11 @@ The video processing program shall output a .XModal file of the spatial location
   
 # Change management plan
   
-<Description of what this section is>
+## Commercial Use
+
+  The team at Jolly Snowman is pleased to help deploy our software for use in your lights business. We recommend working with us to develop a custom deployment plan depending on your planned use. For reference, we recommend a phased conversion plan for businesses serving multiple small to medium sites. We define medium as < 7,500 lights. Often, our clients find the use of the software to be time-saving and intuitive, but it is important to appropriately plan for enough time to film and process the lights. If your business has the time to plan for a seasonal deployment, we recommend starting with cites served during Halloween before hitting peak use times around Christmas. If your business has multiple large sites, or centers around events or performances, we recommend contacting us for a custom pilot conversion plan. Many of our smaller commercial clients that do not have any existing integration software find adopting our software can be done quickly and easily, although we still caution our clients to reserve time for video production and processing. 
+  
+  For all our commercial clients we recommend hosting Jolly Snowman for a learning seminar with your technical team. A friendly Jolly Snowman representative will be happy to lead your team through navigating the software with a live, hands on demonstration. Your team with learn helpful tips for producing winning video files with our lights props. We will demo a variety of camera input methods, customized to match the systems your team already uses. As a reminder, Jolly Snowman software is designed to integrate seamlessly with the current version of xLights software. If your business needs to utilize a different program please contact use about a custom development product. As always, the team at Jolly Snowman is invested in your success. Our customer serverice extends beyond deployment for 1 year as default, although a custom service plan can be created depending on your business needs. 
   
 # Traceability links
   
