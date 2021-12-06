@@ -8,33 +8,72 @@ This document serves as a set of software requirements which make the program bo
 
 ## Functional Requirements
 
+### Software Feature: Overall
+The software shall have two operating modes, realtime and video playback.
+The software shall save the user defined settings on shutdown.
+The software shall load the user defined settings on startup.
+The software shall not consume more than 1 GB of memory.
+The software shall not close unexpectedly.
+
+### Software Feature: Realtime Mode
+The software shall output E1.31 data when the user select Realtime output mode.
+The software shall allow the user to set the amount of lights.
+The software shall allow the user to turn on a specific Light.
+The software shall send E1.31 data to turn on specific Light.
+The software shall capture a video frame from the camera after sending E1.31 data.
+
 ### Software Feature: GUI
 
-The GUI does not consume more than 1 GB of memory.
-The GUI shall be able to load a video file into memory.
+The GUI shall have a dialog to select operating modes.
+The GUI shall have a dialog to edit program settings.
 The GUI shall have an "Exit" button.
-The GUI shall have a toolbar.
+The GUI shall have an Export xModel File Option.
+The GUI shall have an logging display.
+The GUI shall overlay the found lights onto the video display.
 
 ### Software Feature: Video Processing
 
 The user shall be able to adjust processing parameters.
-The video processing shall pause if two or more light objects are detected simulataneously.
-The video processing shall pause if no light objects are detected
-The video processor shall expect one new light to be lit for every 500 miliseconds of video.
+The video processing shall pause if two or more light objects are detected simultaneously.
+The video processor shall expect one new light to be lit for every 500 milliseconds of video.
+The video processing shall allow the user to manually control setting to best detect the light.
+The video processing shall allow the user to manually control the video files time position.
+
+### Software Feature: Data Output 
+
+The data output shall output E1.31 data when the user select Realtime output mode.
+The data output shall set E1.31 data to turn on a Light.
+
 
   
 ## Non-Functional Requirements
+
+### Software Feature: Overall
+
+The software shall operate and run on Windows 7 and 10.
+The software shall use the .Net 5 Runtime library.
+The software shall use the openCV Image processing library.
+The software shall export xLight compatible model files.
+The software shall work with E1.31 compatible light controllers.
 
 ### Software Feature: GUI
 
 The program must have a GUI.
 The GUI shall remain responsive while the program opperates.
+The GUI shall provide user feedback while the program preforms operations.
 The program shall load in 3 seconds or less.
 
 ### Software Feature: Video Processing
 
 The video processing time shall not take longer than than the length of the video file.
-The video processing program shall output a .XModal file of the spatial location of the lights.
+The software shall load MP4 video files.
+The software shall work with USB webcam devices.
+The software shall work with RTSP cameras.
+
+### Software Feature: E1.31 Data Output 
+
+The software shall support the E1.31, called Streaming ACN protocol.
+The software shall support multiple E1.31 universes of data.
   
 # Change management plan
   
