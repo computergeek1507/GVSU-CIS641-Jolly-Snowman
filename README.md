@@ -5,10 +5,16 @@ High-end Christmas light shows involve the complex management and control of add
 
 The goal of this project was to develop an application that can automate the task of creating these models. Through a video or live stream, each LED is turned on and off in sequence. The information is stored and then used to export a .xmodel file for use with XLights.
 
+## Installation Guide
+
+## Running Jolly Snowman
+
+We recommend the Jolly Snowman software for residential use with users who are already moderately familiar with xLights. Users who are novices with xLights may want to focus on learning that software program first before utilizing Jolly Snowman. 
+
 ## About Jolly Snowman
 
 You can read our [project proposal](docs/proposal.md) <br>
-You can read our [software specifications](docs/software_requirements_specification.md) <br>
+You can read our [software specifications](docs/software_requirements_specification_final.md) <br>
 You can view our movie files used for testing [here](artifacts/) <br>
 
 ## Team Members
