@@ -125,7 +125,7 @@ These are the video files we used during construction of the program. They are v
 
 ### Test Videos
 
-Videos used for unit testing purposes reside within this folder. The keyword "Beginning" is reference to the flashing of all lights at the beginning of the video. This flashing was orginally going to be used to mark the beginning of the analysis, but that was not included in the final design.
+Videos used for unit testing purposes reside within this folder. The keyword "Beginning" is reference to the flashing of all lights at the beginning of the video. This flashing was originally going to be used to mark the beginning of the analysis, but that was not included in the final design.
 
 - [Test_BeginningAndNone](../artifacts/TestVideos/Test_BeginningAndNone.mp4)
 - [Test_BeginningAndOne](../artifacts/TestVideos/Test_BeginningAndOne.mp4)
@@ -149,11 +149,11 @@ This folder contains use case diagrams, activity diagrams, and use case descript
 
 The human centered interface design models can be found within this folder.
 
-- [Windows Naviation Diagram](../artifacts/hci/WND.drawio.pdf)
+- [Windows Navigation Diagram](../artifacts/hci/WND.drawio.pdf)
 
 #### Presentation Assets
 
 Pictures and videos created by the group specifically created for the purpose of presentation reside within this folder. 
 
-- [Applation Screenshot](../artifacts/PresentationAssets/ApplicationScreenshot.png)
+- [Application Screenshot](../artifacts/PresentationAssets/ApplicationScreenshot.png)
 - [Midterm Video Demo](../artifacts/PresentationAssets/Video_Demo.mp4)
