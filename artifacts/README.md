@@ -19,15 +19,15 @@ Videos used for unit testing purposes reside within this folder. The keyword "Be
 
 This folder contains use case diagrams, activity diagrams, and use case descriptions. These models depict the design of the program in a visual format.
 
-- Activity Diagram - Live Video drawio.png
-- Activity Diagram - Video Process.png
-- Activity Diagram - Application.drawio.png
-- Use Case - DMX Controller.drawio.png
-- Use Case - Live Capture.drawio.png
-- Use CAse - Video_Process-Page-1.drawio.png
-- Use Case Description - Live Capture.docx
-- Use Case Diagram - GUI.drawio.png
-- Use Case XModel_export.drawio.png
+- [AD - Live Video](functional-models/ActivityDiagram-LiveVideo.drawio.png)
+- [AD - Video Process](functional-models/ActivityDiagram-VideoProcess.png)
+- [Application diagram](functional-models/ActivityDiagram-Application.drawio.png)
+- [UC - DMX Controller](functional-models/UseCase-DMXController.drawio.png)
+- [UC - Live Capture](functional-models/UseCase-LiveCapture.drawio.png)
+- [UC - Video Processing](functional-models/UseCase-Video_Process-Page-1.drawio.png)
+- [UC Model Export](functional-models/UseCaseXModel_export.drawio.png)
+- [UC Description - Live Capture](functional-models/UseCaseDescription-LiveCapture.docx)
+- [UC Diagram - GUI](functional-models/UseCaseDiagram-GUI.drawio.png)
 
 ### HCI
 
