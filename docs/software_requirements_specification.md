@@ -13,15 +13,15 @@ This document serves as a set of software requirements which make the program bo
     
 2. Software Feature: Video Processing
     1. The user shall be able to adjust processing parameters.
-    2. The video processing shall pause if two or more light objects are detected simulataneously.
+    2. The video processing shall pause if two or more light objects are detected simultaneously.
     3. The video processing shall pause if no light objects are detected
-    4. The video processor shall expect one new light to be lit for every 500 miliseconds of video.
+    4. The video processor shall expect one new light to be lit for every 500 milliseconds of video.
 
 ## Non-Functional Requirements
 
 1. Software Feature: GUI
     1. The program must have a GUI.
-    2. The GUI shall remain responsive while the program opperates. 
+    2. The GUI shall remain responsive while the program operates. 
     3. The program shall load in 3 seconds or less. 
 
  2. Software Feature: Video Processing
