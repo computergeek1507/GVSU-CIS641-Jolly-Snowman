@@ -15,7 +15,7 @@ on:
       - '*.yml'
       - 'LICENSE'
       - 'README.*'
-
+  workflow_dispatch:
 jobs:
 
   build:
