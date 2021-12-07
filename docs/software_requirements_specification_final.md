@@ -9,6 +9,7 @@ This document serves as a set of software requirements which make the program bo
 ## Functional Requirements
 
 ### Software Feature: Overall
+
 1. The software shall have two operating modes, realtime and video playback.
 2. The software shall save the user defined settings on shutdown.
 3. The software shall load the user defined settings on startup.
@@ -16,10 +17,11 @@ This document serves as a set of software requirements which make the program bo
 5. The software shall not close unexpectedly.
 
 ### Software Feature: Realtime Mode
+
 6. The software shall output E1.31 data when the user select Realtime output mode.
 7. The software shall allow the user to set the amount of lights.
 8. The software shall allow the user to turn on a specific Light.
-9. The software shall send E1.31 data to turn on specific Light.
+9. The software shall send E1.31 data to turn on a specific Light.
 10. The software shall capture a video frame from the camera after sending E1.31 data.
 
 ### Software Feature: GUI
@@ -36,43 +38,55 @@ This document serves as a set of software requirements which make the program bo
 17. The user shall be able to adjust processing parameters.
 18. The video processing shall pause if two or more light objects are detected simultaneously.
 19. The video processor shall expect one new light to be lit for every 500 milliseconds of video.
-20. The video processing shall allow the user to manually control setting to best detect the light.
-21. The video processing shall allow the user to manually control the video files time position.
+20. The video processor shall allow the user to manually control settings optimize for the best light detection.
+21. The video processor shall allow the user to manually control the video files time position.
+22. The video processor shall allow the user to pause video playback.
+23. The video processor shall allow the user to resume video playback.
 
 ### Software Feature: Data Output 
 
-22. The data output shall output E1.31 data when the user select Realtime output mode.
-23. The data output shall set E1.31 data to turn on a Light.
+24. The data output shall output E1.31 data when the user select Realtime output mode.
+25. The data output shall set E1.31 data to turn on a Light.
 
-  
+
 ## Non-Functional Requirements
 
 ### Software Feature: Overall
 
-24. The software shall operate and run on Windows 7 and 10.
-25. The software shall use the .Net 5 Runtime library.
-26. The software shall use the openCV Image processing library.
-27. The software shall export xLight compatible model files.
-28. The software shall work with E1.31 compatible light controllers.
+1. The software shall operate and run on Windows 7.
+2. The software shall operate and run on Windows 10.
+3. The software shall operate and run on Windows 11.
+4. The software shall use the .Net 5 Runtime library.
+5. The software shall use the openCV Image processing library.
+6. The software shall export xLight compatible model files.
+7. The software shall allow the user to save models to outside of the program directory.
+8. The software shall allow the user to load videos from outside of the program directory.
+9. The software shall interface with E1.31 compatible light controllers.
 
 ### Software Feature: GUI
 
-29. The program must have a GUI.
-30. The GUI shall remain responsive while the program operates.
-31. The GUI shall provide user feedback while the program preforms operations.
-32. The program shall load in 3 seconds or less.
+10. The program shall have a GUI.
+11. The program GUI shall display properly to Full HD displays.
+12. The program GUI shall display properly to QHD displays.
+13. The GUI shall remain responsive while the program operates.
+14. The GUI shall provide feedback while the program preforms operations.
+15. The program shall load within 3 seconds.
 
 ### Software Feature: Video Processing
 
-33. The video processing time shall not take longer than than the length of the video file.
-34. The software shall load MP4 video files.
-35. The software shall work with USB webcam devices.
-36. The software shall work with RTSP cameras.
+16. The video processing time shall not take longer than than the length of the video file.
+17. The software shall load MP4 video files.
+18. The software shall work with USB webcam devices.
+19. The software shall work with RTSP cameras.
+20. The software shall overlay the locations of detected lights onto the current frame.
+21. The software shall present relevant location information to the user for all detected lights of the current run.
+22. The software shall discard processing results upon the start of a new video.
 
 ### Software Feature: E1.31 Data Output 
 
-37. The software shall support the E1.31, called Streaming ACN protocol.
-38. The software shall support multiple E1.31 universes of data.
+23. The software shall support the E1.31, called Streaming ACN protocol.
+24. The software shall support multiple E1.31 universes of data.
+25. The software shall not interfere with unrelated devices connected to the computer.
   
 # Change management plan
   
