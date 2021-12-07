@@ -7,9 +7,13 @@ The goal of this project was to develop an application that can automate the tas
 
 ## Installation Guide
 
+### System Requirements
+
+- Windows OS
+
 ## Running Jolly Snowman
 
-We recommend the Jolly Snowman software for residential use with users who are already moderately familiar with xLights. Users who are novices with xLights may want to focus on learning that software program first before utilizing Jolly Snowman. 
+We recommend the Jolly Snowman software for residential use with users who are already familiar with xLights. Users who are novices with xLights may want to focus on learning that software program first before utilizing Jolly Snowman. 
 
 Jolly Snowman can be utilized with video files or a live stream. Listed below are the ideal video conditions. While it is possible to process a video that is less than ideal you may find the video processing more challenging, and it may require more fine tuning of the video settings. 
 
@@ -19,6 +23,8 @@ As a reminder a quality video file or live stream will:
 - Be as still and steady as possible, with lights in focus as they illuminate. A video recorded from a stand or other stationary object is best.
 - Each light should illuminate one at a time, and not more than once per light. 
 - We recommend illuminating the lights white for the purposes of this video. 
+
+### Getting Started
 
 ## About Jolly Snowman
 
