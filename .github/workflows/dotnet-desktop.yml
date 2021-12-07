@@ -60,7 +60,7 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: published_Emgu_Test
-        path: src\bin\Release\     
+        path: src\Emgu_Test.Tests\bin\Release\net5.0-windows\
 
 
 

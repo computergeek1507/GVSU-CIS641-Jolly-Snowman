@@ -63,36 +63,36 @@ This document serves as a set of software requirements which make the program bo
 
 ### Software Feature: Overall
 
-5. The program shall use the openCV Image processing library.
-6. The program shall export xLight compatible model files.
-7. The program shall allow the user to save models to outside of the program directory.
-8. The program shall allow the user to load videos from outside of the program directory.
-9. The program shall interface with E1.31 compatible light controllers.
+6. The program shall use the openCV Image processing library.
+7. The program shall export xLight compatible model files.
+8. The program shall allow the user to save models to outside of the program directory.
+9.  The program shall allow the user to load videos from outside of the program directory.
+10. The program shall interface with E1.31 compatible light controllers.
 
 ### Software Feature: GUI
 
-10. The program shall have a GUI.
-11. The program GUI shall display properly to Full HD displays.
-12. The program GUI shall display properly to QHD displays.
-13. The GUI shall remain responsive while the program operates.
-14. The GUI shall provide feedback while the program preforms operations.
-15. The program shall load within 3 seconds.
+11. The program shall have a GUI.
+12. The program GUI shall display properly to Full HD displays.
+13. The program GUI shall display properly to QHD displays.
+14. The GUI shall remain responsive while the program operates.
+15. The GUI shall provide feedback while the program preforms operations.
+16. The program shall load within 3 seconds.
 
 ### Software Feature: Video Processing
 
-16. The video processing time shall not take longer than than the length of the video file.
-17. The program shall load MP4 video files.
-18. The program shall work with USB webcam devices.
-19. The program shall work with RTSP cameras.
-20. The program shall overlay the locations of detected lights onto the current frame.
-21. The program shall present relevant location information to the user for all detected lights of the current run.
-22. The program shall discard processing results upon the start of a new video.
+17. The video processing time shall not take longer than than the length of the video file.
+18. The program shall load MP4 video files.
+19. The program shall work with USB webcam devices.
+20. The program shall work with RTSP cameras.
+21. The program shall overlay the locations of detected lights onto the current frame.
+22. The program shall present relevant location information to the user for all detected lights of the current run.
+23. The program shall discard processing results upon the start of a new video.
 
 ### Software Feature: E1.31 Data Output 
 
-23. The program shall support the E1.31, Streaming ACN protocol.
-24. The program shall support the Unicast E1.31 protocol.
-25. The program should interface with an ethernet network adapter when in Realtime output mode.
+24. The program shall support the E1.31, Streaming ACN protocol.
+25. The program shall support the Unicast E1.31 protocol.
+26. The program should interface with an ethernet network adapter when in Realtime output mode.
 27. The program shall support multiple E1.31 universes of data.
 28. The program shall not interfere with unrelated devices connected to the computer.
   
