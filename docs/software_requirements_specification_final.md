@@ -112,15 +112,23 @@ This document serves as a set of software requirements which make the program bo
   
 | Artifact ID | Artifact Name | Requirement ID |
 | :-------------: | :----------: | :----------: |
-| UseCase1 | Move Player | FR5 |
-| … | … | … |
+| UseCase1       | DMX Controller     | --- |
+| UseCase2       | Live Capture       | --- |
+| UseCase3       | Video Processing   | --- |
+| UseCase4       | Model Export       | --- |
+| UCDescription1 | Live Capture       | --- |
+| UCDiagram1     | GUI                | --- |
+| AppDiagram1    | Application Diagram| --- |
+| WND            | WND                | --- |
+| ScreenShot1    | Main Window        | --- |
+| VideoDemo1     | Midterm Video Demo | --- |
   
 ## Class Diagram Traceability
   
 | Artifact Name | Requirement ID |
+
 | :-------------: |:----------: |
-| classPlayer | NFR3, FR5 |
-| … | … | … |
+
   
 ## Activity Diagram Traceability
   
@@ -129,6 +137,8 @@ to the file and to those requirements impacted>
 | Artifact ID | Artifact Name | Requirement ID |
 | :-------------: | :----------: | :----------: |
 | <filename> | Handle Player Input | FR1-5, NFR2 |
+| ActDiagram1    | Live Video         | --- |
+| ActDiagram2    | Video Process      | --- |
 | … | … | … |
   
 # Software Artifacts
@@ -165,6 +175,7 @@ This folder contains use case diagrams, activity diagrams, and use case descript
 - [UC Model Export](../artifacts/functional-models/UseCaseXModel_export.drawio.png)
 - [UC Description - Live Capture](../artifacts/functional-models/UseCaseDescription-LiveCapture.docx)
 - [UC Diagram - GUI](../artifacts/functional-models/UseCaseDiagram-GUI.drawio.png)
+- [Class Diagram](../artifacts/functional-models/ClassUMLDiagrams.png)
 
 ### HCI
 

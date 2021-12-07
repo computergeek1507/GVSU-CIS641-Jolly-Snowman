@@ -28,6 +28,7 @@ This folder contains use case diagrams, activity diagrams, and use case descript
 - [UC Model Export](functional-models/UseCaseXModel_export.drawio.png)
 - [UC Description - Live Capture](functional-models/UseCaseDescription-LiveCapture.docx)
 - [UC Diagram - GUI](functional-models/UseCaseDiagram-GUI.drawio.png)
+- [Class Diagram](functional-models/ClassUMLDiagrams.png)
 
 ### HCI
 
