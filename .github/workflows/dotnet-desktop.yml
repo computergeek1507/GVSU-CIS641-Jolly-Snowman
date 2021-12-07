@@ -51,15 +51,16 @@ jobs:
       working-directory: src
       run: nuget restore Emgu_Test.sln
  
-    - name: Build and Publish Web App
+    - name: Build and Publish App
       working-directory: src
       run: msbuild Emgu_Test.sln /p:Configuration=Release
  
     - name: Upload Artifact
+    
       uses: actions/upload-artifact@v1.0.0
       with:
         name: published_Emgu_Test
-        path: bin\Release\     
+        path: src\bin\Release\     
 
 
 
