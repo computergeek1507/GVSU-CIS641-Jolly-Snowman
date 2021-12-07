@@ -16,46 +16,53 @@ This document serves as a set of software requirements which make the program bo
 4. The program shall not consume more than 1 GB of memory.
 5. The program shall not close unexpectedly.
 
-### Software Feature: Realtime Mode
+### Software Feature: Program Settings
 
-6. The program shall output E1.31 data when the user selects Realtime output mode.
 7. The program shall allow the user to set the amount of lights.
 8. The program shall allow the user to turn on a specific Light.
 9. The program shall send E1.31 data to turn on a specific Light.
-10. The program shall capture a video frame from the camera after sending E1.31 data.
+10. The program shall allow the user to manually control settings optimize for the best light detection.
+11. The program shall allow the user to configure a live video input.
 
 ### Software Feature: GUI
 
-11. The GUI shall have a dialog to select operating modes.
-12. The GUI shall have a dialog to edit program settings.
-13. The GUI shall have an "Exit" button.
-14. The GUI shall have an Export xModel File Option.
-15. The GUI shall have an logging display.
-16. The GUI shall overlay the found lights onto the video display.
+12. The GUI shall have a dialog to select operating modes.
+13. The GUI shall have a dialog to edit program settings.
+14. The GUI shall have an "Exit" button.
+15. The GUI shall have an Export xModel File Option.
+16. The GUI shall have an logging display.
+17. The GUI shall overlay the found lights onto the video display.
 
 ### Software Feature: Video Processing
 
-17. The user shall be able to adjust processing parameters.
-18. The video processing shall pause if two or more light objects are detected simultaneously.
-19. The video processor shall expect one new light to be lit for every 500 milliseconds of video.
-20. The video processor shall allow the user to manually control settings optimize for the best light detection.
+18. The user shall be able to adjust processing parameters.
+19. The video processing shall pause if two or more light objects are detected simultaneously.
+20. The video processor shall expect one new light to be lit for every 500 milliseconds of video.
 21. The video processor shall allow the user to manually control the video files time position.
-22. The video processor shall allow the user to pause video playback.
-23. The video processor shall allow the user to resume video playback.
+22. The video processor shall allow the user to pause and resume video playback.
 
-### Software Feature: Data Output 
+### Software Feature: E1.31 Output and Control
 
-24. The data output shall output E1.31 data when the user select Realtime output mode.
-25. The data output shall set E1.31 data to turn on a Light.
+23. The program shall output E1.31 data when the user selects Realtime output mode.
+24. The program shall capture a video frame from the camera after sending E1.31 data.
+25. The program shall send E1.31 commands to turn on a Light.
+26. The program shall send E1.31 commands to turn off a light.
+27. The program shall turn a light on for one second before turning it off when in Realtime output mode.
+
 
 ## Non-Functional Requirements
 
-### Software Feature: Overall
+
+### System Requirements
 
 1. The program shall operate and run on Windows 7.
 2. The program shall operate and run on Windows 10.
 3. The program shall operate and run on Windows 11.
 4. The program shall use the .Net 5 Runtime library.
+5. The program shall use CPU resources when a dedicated GPU cannot be used for video processing.
+
+### Software Feature: Overall
+
 5. The program shall use the openCV Image processing library.
 6. The program shall export xLight compatible model files.
 7. The program shall allow the user to save models to outside of the program directory.
@@ -83,9 +90,11 @@ This document serves as a set of software requirements which make the program bo
 
 ### Software Feature: E1.31 Data Output 
 
-23. The program shall support the E1.31, called Streaming ACN protocol.
-24. The program shall support multiple E1.31 universes of data.
-25. The program shall not interfere with unrelated devices connected to the computer.
+23. The program shall support the E1.31, Streaming ACN protocol.
+24. The program shall support the Unicast E1.31 protocol.
+25. The program should interface with an ethernet network adapter when in Realtime output mode.
+27. The program shall support multiple E1.31 universes of data.
+28. The program shall not interfere with unrelated devices connected to the computer.
   
 # Change management plan
   
