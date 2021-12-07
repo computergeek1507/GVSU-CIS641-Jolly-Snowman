@@ -10,19 +10,19 @@ This document serves as a set of software requirements which make the program bo
 
 ### Software Feature: Overall
 
-1. The software shall have two operating modes, realtime and video playback.
-2. The software shall save the user defined settings on shutdown.
-3. The software shall load the user defined settings on startup.
-4. The software shall not consume more than 1 GB of memory.
-5. The software shall not close unexpectedly.
+1. The program shall have two operating modes, realtime and video playback.
+2. The program shall save the user defined settings on shutdown.
+3. The program shall load the user defined settings on startup.
+4. The program shall not consume more than 1 GB of memory.
+5. The program shall not close unexpectedly.
 
 ### Software Feature: Realtime Mode
 
-6. The software shall output E1.31 data when the user select Realtime output mode.
-7. The software shall allow the user to set the amount of lights.
-8. The software shall allow the user to turn on a specific Light.
-9. The software shall send E1.31 data to turn on a specific Light.
-10. The software shall capture a video frame from the camera after sending E1.31 data.
+6. The program shall output E1.31 data when the user selects Realtime output mode.
+7. The program shall allow the user to set the amount of lights.
+8. The program shall allow the user to turn on a specific Light.
+9. The program shall send E1.31 data to turn on a specific Light.
+10. The program shall capture a video frame from the camera after sending E1.31 data.
 
 ### Software Feature: GUI
 
@@ -48,20 +48,19 @@ This document serves as a set of software requirements which make the program bo
 24. The data output shall output E1.31 data when the user select Realtime output mode.
 25. The data output shall set E1.31 data to turn on a Light.
 
-
 ## Non-Functional Requirements
 
 ### Software Feature: Overall
 
-1. The software shall operate and run on Windows 7.
-2. The software shall operate and run on Windows 10.
-3. The software shall operate and run on Windows 11.
-4. The software shall use the .Net 5 Runtime library.
-5. The software shall use the openCV Image processing library.
-6. The software shall export xLight compatible model files.
-7. The software shall allow the user to save models to outside of the program directory.
-8. The software shall allow the user to load videos from outside of the program directory.
-9. The software shall interface with E1.31 compatible light controllers.
+1. The program shall operate and run on Windows 7.
+2. The program shall operate and run on Windows 10.
+3. The program shall operate and run on Windows 11.
+4. The program shall use the .Net 5 Runtime library.
+5. The program shall use the openCV Image processing library.
+6. The program shall export xLight compatible model files.
+7. The program shall allow the user to save models to outside of the program directory.
+8. The program shall allow the user to load videos from outside of the program directory.
+9. The program shall interface with E1.31 compatible light controllers.
 
 ### Software Feature: GUI
 
@@ -75,18 +74,18 @@ This document serves as a set of software requirements which make the program bo
 ### Software Feature: Video Processing
 
 16. The video processing time shall not take longer than than the length of the video file.
-17. The software shall load MP4 video files.
-18. The software shall work with USB webcam devices.
-19. The software shall work with RTSP cameras.
-20. The software shall overlay the locations of detected lights onto the current frame.
-21. The software shall present relevant location information to the user for all detected lights of the current run.
-22. The software shall discard processing results upon the start of a new video.
+17. The program shall load MP4 video files.
+18. The program shall work with USB webcam devices.
+19. The program shall work with RTSP cameras.
+20. The program shall overlay the locations of detected lights onto the current frame.
+21. The program shall present relevant location information to the user for all detected lights of the current run.
+22. The program shall discard processing results upon the start of a new video.
 
 ### Software Feature: E1.31 Data Output 
 
-23. The software shall support the E1.31, called Streaming ACN protocol.
-24. The software shall support multiple E1.31 universes of data.
-25. The software shall not interfere with unrelated devices connected to the computer.
+23. The program shall support the E1.31, called Streaming ACN protocol.
+24. The program shall support multiple E1.31 universes of data.
+25. The program shall not interfere with unrelated devices connected to the computer.
   
 # Change management plan
   
