@@ -104,7 +104,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Minimum Blob Size"), DescriptionAttribute("Minimum Blob Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Blob Size"), DescriptionAttribute("Minimum Light Size in Pixels, adjust up if the processing is missing lights")]
 		public int MinBlobSize
 		{
 			get
@@ -117,7 +117,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Maximum Blob Size"), DescriptionAttribute("Maximum Blob Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Maximum Blob Size"), DescriptionAttribute("Maximum Light Size in Pixels, adjust down if other light object is being captured")]
 		public int MaxBlobSize
 		{
 			get
@@ -131,7 +131,7 @@ namespace Emgu_Test
 		}
 
 
-		[CategoryAttribute("Video Settings"), DisplayName("Grey Threshold"), DescriptionAttribute("Grey Value Threshold(0-255)")]
+		[CategoryAttribute("Video Settings"), DisplayName("Grey Threshold"), DescriptionAttribute("Grey Value Threshold(0-255), start at 255 and adjust down as needed for dim videos")]
 		public int GreyThreshold
 		{
 			get
@@ -144,7 +144,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Erode Size"), DescriptionAttribute("Blob Erode Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Erode Size"), DescriptionAttribute("Blob Erode Size, adjust this only if necessary after adjusting Grey Threshold, Brightness, and Color")]
 		public int ErodeSize
 		{
 			get
@@ -157,7 +157,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Dilate Size"), DescriptionAttribute("Blob Dilate Size")]
+		[CategoryAttribute("Video Settings"), DisplayName("Dilate Size"), DescriptionAttribute("Blob Dilate Size, adjust this only if necessary after adjusting Grey threshold, Brightness, and Color")]
 		public int DilateSize
 		{
 			get
@@ -183,7 +183,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Color"), DescriptionAttribute("Color(0-255)")]
+		[CategoryAttribute("Video Settings"), DisplayName("Color"), DescriptionAttribute("Color(0-255), start at 255 and adjust downward as needed for dim videos")]
 		public byte Color
 		{
 			get
@@ -196,7 +196,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Minimum Circularity"), DescriptionAttribute("Min Circularity")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Circularity"), DescriptionAttribute("Minimum Circularity, used to determine if an object is a circle")]
 		public float MinCircularity
 		{
 			get
@@ -209,7 +209,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Minimum Convexity"), DescriptionAttribute("Min Convexity")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Convexity"), DescriptionAttribute("Minimum Convexity, used to determine if an object is a circle")]
 		public float MinConvexity
 		{
 			get
@@ -222,7 +222,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("Video Settings"), DisplayName("Minimum Inertia"), DescriptionAttribute("Min Inertia Ratio")]
+		[CategoryAttribute("Video Settings"), DisplayName("Minimum Inertia"), DescriptionAttribute("Minimum Inertia Ratio, used to determine if an object is a circle")]
 		public float MinInertiaRatio
 		{
 			get
@@ -326,7 +326,7 @@ namespace Emgu_Test
 			}
 		}
 
-		[CategoryAttribute("E131 Settings"), DisplayName("Brightness"), DescriptionAttribute("Light Output Brightness(0-255)")]
+		[CategoryAttribute("E131 Settings"), DisplayName("Brightness"), DescriptionAttribute("Light Output Brightness(0-255), start at 255, bright white, and adjust down if needed for a dim video")]
 		public byte Brightness
 		{
 			get
