@@ -128,6 +128,7 @@ This document serves as a set of software requirements which make the program bo
 | Artifact Name | Requirement ID |
 
 | :-------------: |:----------: |
+| Class UML Diagram | --- |
 
   
 ## Activity Diagram Traceability
@@ -189,3 +190,18 @@ Pictures and videos created by the group specifically created for the purpose of
 
 - [Application Screenshot](../artifacts/PresentationAssets/ApplicationScreenshot.png)
 - [Midterm Video Demo](../artifacts/PresentationAssets/Video_Demo.mp4)
+
+#### Screenshots
+
+Screenshots depicting the operation of the application and the models function in X-Lights
+
+- [Load a video file](../artifacts/Screenshots/load_video_file.png)
+- [Select camera input](../artifacts/Screenshots/select_local_camera.png)
+- [Load video file](../artifacts/Screenshots/load_video.png)
+- [Select a remote camera](../artifacts/Screenshots/remote_camera.png)
+- [Show detected Light](../artifacts/Screenshots/detect_light.png)
+- [Display Detected Lights](../artifacts/Screenshots/display_detections.png)
+- [Export the model](../artifacts/Screenshots/export_model.png)
+- [Display within XLights](../artifacts/Screenshots/display_xlights_0.png)
+- [Display within XLights](../artifacts/Screenshots/display_xlights_1.png)
+- [The model within XLights](../artifacts/Screenshots/xlight_csvModel.png)
