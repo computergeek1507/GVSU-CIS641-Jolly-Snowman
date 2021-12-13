@@ -54,6 +54,5 @@ Screenshots depicting the operation of the application and the models function i
 - [Show detected Light](Screenshots/detect_light.png)
 - [Display Detected Lights](Screenshots/display_detections.png)
 - [Export the model](Screenshots/export_model.png)
-- [Display within XLights](Screenshots/display_xlights_0.png)
 - [Display within XLights](Screenshots/display_xlights_1.png)
 - [The model within XLights](Screenshots/xlight_csvModel.png)
