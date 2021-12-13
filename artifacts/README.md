@@ -42,3 +42,18 @@ Pictures and videos created by the group specifically created for the purpose of
 
 - [Application Screenshot](PresentationAssets/ApplicationScreenshot.png)
 - [Midterm Video Demo](PresentationAssets/Video_Demo.mp4)
+
+#### Screenshots
+
+Screenshots depicting the operation of the application and the models function in X-Lights
+
+- [Load a video file](Screenshots/load_video_file.png)
+- [Select camera input](Screenshots/select_local_camera.png)
+- [Load video file](Screenshots/load_video.png)
+- [Select a remote camera](Screenshots/remote_camera.png)
+- [Show detected Light](Screenshots/detect_light.png)
+- [Display Detected Lights](Screenshots/display_detections.png)
+- [Export the model](Screenshots/export_model.png)
+- [Display within XLights](Screenshots/display_xlights_0.png)
+- [Display within XLights](Screenshots/display_xlights_1.png)
+- [The model within XLights](Screenshots/xlight_csvModel.png)
