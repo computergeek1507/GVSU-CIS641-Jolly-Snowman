@@ -131,7 +131,7 @@ namespace Emgu_Test
 		}
 
 
-		[CategoryAttribute("Video Settings"), DisplayName("Grey Threshold"), DescriptionAttribute("Grey Value Threshold(0-255), start at 255 and adjust down as needed for dim videos")]
+		[CategoryAttribute("Video Settings"), DisplayName("Grey Threshold"), DescriptionAttribute("Grey Value Threshold(0-255), start at 100 and adjust up as needed for dim videos")]
 		public int GreyThreshold
 		{
 			get

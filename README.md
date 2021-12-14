@@ -20,7 +20,7 @@ The goal of this project was to develop an application that can automate the tas
 
 We recommend the Jolly Snowman software for residential use, with users who are already familiar with xLights software. Users who are novices with xLights may want to focus on learning that software program first before utilizing Jolly Snowman. 
 
-For details on how to use Jolly Snowman, including step-by-step instructions and troubleshooting, please see the [user guide](docs/user_guide.md)
+For details on how to use Jolly Snowman, including step-by-step instructions and troubleshooting, please see the [user guide.](docs/user_guide.md)
 
 ## About Jolly Snowman
 
