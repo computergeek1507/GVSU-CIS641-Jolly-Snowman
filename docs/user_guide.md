@@ -11,7 +11,7 @@ The goal of this project was to develop an application that can automate the tas
 ### Download Jolly Snowman
 
 - Zipped file size is 50 MB
-- Download Version [1.0 here](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/releases/download/v1/release_v1.zip)
+- Download Version [1 here](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/releases/download/v1/release_v1.zip)
 
 ## Running Jolly Snowman
 
@@ -19,12 +19,44 @@ We recommend the Jolly Snowman software for residential use with users who are a
 
 ### Getting Started
 
-1. After downloading the Version 1.0 zip file you will need to extract, or unzip, the file. 
+1. After downloading the Version 1 zip file you will need to extract, or unzip, the file. 
+
 2. In the unzipped file launch the program by doubling clicking "Emgu_Test". Windows defender will pop up to warn you about this file because it is an unsigned file. Click "More" and then "Run Anyways" to run the program. 
-3. Click "File" >> "Load Video" to get started. Select your video file or video feed, if processing from a live camera. 
-4. We recommend processing your video file with the default settings. Changing these settings is helpful for troubleshooting if the default settings do not work for your file. Note each setting has helpful hints in the description box in the bottom corner of the window. 
+
+3. Click "File" >> "Load Video" to get started. 
+
+![Image of File to Load Video Path](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/load_video.png)
+
+Select "Video File" to upload a file.
+
+![Image of Video File Option](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/load_video_file.png)
+
+Select "Local Camera" to use an integrated or connected webcam.
+
+![Image of Local Camera Option](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/select_local_camera.png)
+
+Select "Remote Camera" to connect to a camera in your network.
+
+![Image of Remote Camera Option](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/remote_camera.png)
+
+4. We recommend processing your video file with the default settings. Changing these settings is helpful for troubleshooting if the default settings do not work for your file. Note each setting has helpful hints in the description box in the bottom corner of the window. See video processing below for more information. 
+Click "Start Processing" to begin automated video processing. 
+
 5. You can note a video scrubbing toggle at the top of the window, as well as a "Process Frame" button, if you need to process a particular frame or if you desire to process manually frame by frame. If you experience difficulties with the video processing see the troubleshooting guide below. 
+
+![Image of Processed Model](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/display_detections.png)
+
+
 6. When you are satisfied with your light identification you are ready to export by clicking "File" >> "Export as xModel".
+
+Here you can see the message displayed when the model is successfully exported. 
+![Image of Exported Model Message](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/export_model.png)
+
+Here you can see how the model looks when exported.
+![Image of Exported Model](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/xlight_csvModel.png)
+
+Here you can see how the model looks in xLights.
+![Image of Model in xLights](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/blob/master/artifacts/Screenshots/display_xlights_1.png)
 
 Happy Processing!
 
