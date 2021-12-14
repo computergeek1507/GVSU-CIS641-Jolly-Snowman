@@ -17,6 +17,17 @@ The goal of this project was to develop an application that can automate the tas
 
 We recommend the Jolly Snowman software for residential use with users who are already familiar with xLights. Users who are novices with xLights may want to focus on learning that software program first before utilizing Jolly Snowman. 
 
+### Getting Started
+
+1. After downloading the Version 1.0 zip file you will need to extract, or unzip, the file. 
+2. In the unzipped file launch the program by doubling clicking "Emgu_Test". Windows defender will pop up to warn you about this file because it is an unsigned file. Click "More" and then "Run Anyways" to run the program. 
+3. Click "File" >> "Load Video" to get started. Select your video file or video feed, if processing from a live camera. 
+4. We recommend processing your video file with the default settings. Changing these settings is helpful for troubleshooting if the default settings do not work for your file. Note each setting has helpful hints in the description box in the bottom corner of the window. 
+5. You can note a video scrubbing toggle at the top of the window, as well as a "Process Frame" button, if you need to process a particular frame or if you desire to process manually frame by frame. If you experience difficulties with the video processing see the troubleshooting guide below. 
+6. When you are satisfied with your light identification you are ready to export by clicking "File" >> "Export as xModel".
+
+Happy Processing!
+
 ## Video Processing
 
 Jolly Snowman can be utilized with a video file or a live stream. Listed below are the ideal video conditions. While it is possible to process a video that is less than ideal, you may find the video processing more challenging, and it may require more fine tuning of the video settings. 
