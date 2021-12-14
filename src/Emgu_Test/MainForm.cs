@@ -175,7 +175,8 @@ namespace Emgu_Test
 
 		void LoadSettings()
 		{
-			var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
+			var settingFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//emgu_settings.xml";
+			//var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
 
 			try
 			{
@@ -195,7 +196,8 @@ namespace Emgu_Test
 
 		void SaveSettings()
 		{
-			var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
+			var settingFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//emgu_settings.xml";
+			//var settingFile = _appDataFolder + Path.DirectorySeparatorChar + "settings.xml";
 			try
 			{
 				XmlSerializer serializer = new XmlSerializer(typeof(VideoSettings));
