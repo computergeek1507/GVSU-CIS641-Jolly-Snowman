@@ -5,16 +5,16 @@ High-end Christmas light shows involve the complex management and control of add
 
 The goal of this project was to develop an application that can automate the task of creating these models. Through a video or live stream, each LED is turned on and off in sequence. The information is stored and then used to export a .xmodel file for use with XLights.
 
-## Installation Guide
+## Installation
 
 ### System Requirements
 
 - Windows OS
-- Zipped file size is 50 MB
 
-### Downloading Jolly Snowman
-<!--- Add more here --->
-Download Version [1.0 here](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/releases/download/v1/release_v1.zip)
+### Download Jolly Snowman
+
+- Zipped file size is 50 MB
+- Download Version [1.0 here](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/releases/download/v1/release_v1.zip)
 
 ## Running Jolly Snowman
 
