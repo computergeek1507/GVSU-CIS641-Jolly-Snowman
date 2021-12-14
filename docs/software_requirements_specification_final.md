@@ -10,7 +10,7 @@ This document serves as a set of software requirements which make the program bo
 
 ### Software Feature: Overall
 
-1. The program shall have two operating modes, realtime and video playback.
+1. The program shall have two operating modes, realtime/live and video playback.
 2. The program shall save the user defined settings on shutdown.
 3. The program shall load the user defined settings on startup.
 4. The program shall not consume more than 1 GB of memory.
@@ -21,7 +21,7 @@ This document serves as a set of software requirements which make the program bo
 7. The program shall allow the user to set the amount of lights.
 8. The program shall allow the user to turn on a specific Light.
 9. The program shall send E1.31 data to turn on a specific Light.
-10. The program shall allow the user to manually control settings optimize for the best light detection.
+10. The program shall allow the user to manually control settings optimized for the best light detection.
 11. The program shall allow the user to configure a live video input.
 
 ### Software Feature: GUI
@@ -36,7 +36,7 @@ This document serves as a set of software requirements which make the program bo
 ### Software Feature: Video Processing
 
 18. The user shall be able to adjust processing parameters.
-19. The video processing shall pause if two or more light objects are detected simultaneously.
+19. The video processing shall skip the frame if two or more light objects are detected simultaneously.
 20. The video processor shall expect one new light to be lit for every 500 milliseconds of video.
 21. The video processor shall allow the user to manually control the video files time position.
 22. The video processor shall allow the user to pause and resume video playback.
@@ -106,29 +106,24 @@ This document serves as a set of software requirements which make the program bo
   
 # Traceability links
   
-<Description of this section>
+The functional models and HPI created during the design of Jolly Snowman have been linked to the software requirements below.
   
 ## Use Case Diagram Traceability
   
 | Artifact ID | Artifact Name | Requirement ID |
 | :-------------: | :----------: | :----------: |
-| UseCase1       | DMX Controller     | --- |
-| UseCase2       | Live Capture       | --- |
-| UseCase3       | Video Processing   | --- |
-| UseCase4       | Model Export       | --- |
-| UCDescription1 | Live Capture       | --- |
-| UCDiagram1     | GUI                | --- |
-| AppDiagram1    | Application Diagram| --- |
-| WND            | WND                | --- |
-| ScreenShot1    | Main Window        | --- |
-| VideoDemo1     | Midterm Video Demo | --- |
+| UseCase1       | DMX Controller     | NF24,25,26 |
+| UseCase2       | Live Capture       | NF19,20,21,22 |
+| UseCase3       | Video Processing   | NF18 |
+| UseCase4       | Model Export       | F8,15 |
+| UCDiagram1     | GUI                | F13,16,18,22; NF8,9,11,15,22, |
+| UCDescription1 | Live Capture       | NF19,20 |
   
 ## Class Diagram Traceability
   
 | Artifact Name | Requirement ID |
-
 | :-------------: |:----------: |
-| Class UML Diagram | --- |
+| [Class UML Diagram](../artifacts/functional-models/ClassUMLDiagrams.png) | F8,9,10,11,18,26,27; NF7,9,10,24,25 |
 
   
 ## Activity Diagram Traceability
@@ -137,10 +132,10 @@ This document serves as a set of software requirements which make the program bo
 to the file and to those requirements impacted>
 | Artifact ID | Artifact Name | Requirement ID |
 | :-------------: | :----------: | :----------: |
-| <filename> | Handle Player Input | FR1-5, NFR2 |
-| ActDiagram1    | Live Video         | --- |
-| ActDiagram2    | Video Process      | --- |
-| … | … | … |
+| ActDiagram1    | Live Video         | NF19, 20 |
+| ActDiagram2    | Video Process      | NF8,18,23 |
+| ActDiagram3    | Application Diagram| F3,13; NF7,25,26 |
+| WND            | WND                | F15,22; NF9,11,18,19,20 |
   
 # Software Artifacts
   
