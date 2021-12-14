@@ -179,14 +179,14 @@ The human centered interface design models can be found within this folder.
 
 - [Windows Navigation Diagram](../artifacts/hci/WND.drawio.pdf)
 
-#### Presentation Assets
+### Presentation Assets
 
 Pictures and videos created by the group specifically created for the purpose of presentation reside within this folder. 
 
 - [Application Screenshot](../artifacts/PresentationAssets/ApplicationScreenshot.png)
 - [Midterm Video Demo](../artifacts/PresentationAssets/Video_Demo.mp4)
 
-#### Screenshots
+### Screenshots
 
 Screenshots depicting the operation of the application and the models function in X-Lights
 
