@@ -10,9 +10,11 @@ The goal of this project was to develop an application that can automate the tas
 ### System Requirements
 
 - Windows OS
+- Zipped file size is 50 MB
 
 ### Downloading Jolly Snowman
 <!--- Add more here --->
+Download Version [1.0 here](https://github.com/computergeek1507/GVSU-CIS641-Jolly-Snowman/releases/download/v1/release_v1.zip)
 
 ## Running Jolly Snowman
 
