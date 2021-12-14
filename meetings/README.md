@@ -8,7 +8,8 @@ Meetings were held weekly on Monday evenings. Meeting minutes can be found in th
 - October:
   - [10/04](GVSU-CIS641-JollySnowman-2021-10-04.md)
   - [10/11](GVSU-CIS641-JollySnowman-2021-10-11.md)
-  - [10/23](GVSU-CIS641-JollySnowman-2021-10-21.md)
+  - [10/18](GVSU-CIS641-JollySnowman-2021-10-18.md)
+  - [10/23](GVSU-CIS641-JollySnowman-2021-10-23.md)
 - November:
   - [11/01](GVSU-CIS641-JollySnowman-2021-11-01.md)
   - [11/08](GVSU-CIS641-JollySnowman-2021-11-08.md)
