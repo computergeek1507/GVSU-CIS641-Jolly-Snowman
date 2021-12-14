@@ -112,12 +112,12 @@ The functional models and HPI created during the design of Jolly Snowman have be
   
 | Artifact ID | Artifact Name | Requirement ID |
 | :-------------: | :----------: | :----------: |
-| UseCase1       | DMX Controller     | NF24,25,26 |
-| UseCase2       | Live Capture       | NF19,20,21,22 |
-| UseCase3       | Video Processing   | NF18 |
-| UseCase4       | Model Export       | F8,15 |
-| UCDiagram1     | GUI                | F13,16,18,22; NF8,9,11,15,22, |
-| UCDescription1 | Live Capture       | NF19,20 |
+| UseCase1       | [DMX Controller](../artifacts/functional-models/UseCase-DMXController.drawio.png) | NF24,25,26 |
+| UseCase2       | [Live Capture](../artifacts/functional-models/UseCase-LiveCapture.drawio.png) | NF19,20,21,22 |
+| UseCase3       | [Video Processing](../artifacts/functional-models/UseCase-Video_Process-Page-1.drawio.png) | NF18 |
+| UseCase4       | [Model Export](../artifacts/functional-models/UseCaseXModel_export.drawio.png) | F8,15 |
+| UCDiagram1     | [GUI](../artifacts/functional-models/UseCaseDiagram-GUI.drawio.png) | F13,16,18,22; NF8,9,11,15,22, |
+| UCDescription1 | [Live Capture](../artifacts/functional-models/UseCaseDescription-LiveCapture.docx) | NF19,20 |
   
 ## Class Diagram Traceability
   
@@ -132,10 +132,10 @@ The functional models and HPI created during the design of Jolly Snowman have be
 to the file and to those requirements impacted>
 | Artifact ID | Artifact Name | Requirement ID |
 | :-------------: | :----------: | :----------: |
-| ActDiagram1    | Live Video         | NF19, 20 |
-| ActDiagram2    | Video Process      | NF8,18,23 |
-| ActDiagram3    | Application Diagram| F3,13; NF7,25,26 |
-| WND            | WND                | F15,22; NF9,11,18,19,20 |
+| ActDiagram1 | [Live Video](../artifacts/functional-models/ActivityDiagram-LiveVideo.drawio.png) | NF19, 20 |
+| ActDiagram2 | [Video Process](../artifacts/functional-models/ActivityDiagram-VideoProcess.png) | NF8,18,23 |
+| ActDiagram3 | [Application Diagram](../artifacts/functional-models/ActivityDiagram-Application.drawio.png)| F3,13; NF7,25,26 |
+| WND | [WND](../artifacts/hci/WND.drawio.pdf) | F15,22; NF9,11,18,19,20 |
   
 # Software Artifacts
   
