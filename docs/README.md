@@ -5,7 +5,7 @@
 PowerPoint presentations and other documents used during project presentations.
 
 - [Midterm Presentation](JollySnowmanMidtermPresentation.ppt.pdf)
-- [Final Presentation](JollySnowmanFinalPresentation.ppt.pdf)
+- [Final Presentation](Jolly%20Snowman%20Final%20Presentation.ppt.pdf)
 
 ## Proposal
 
